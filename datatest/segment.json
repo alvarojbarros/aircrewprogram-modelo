@@ -1,0 +1,863 @@
+[
+    {
+        "BlockTime": "02:30:00", 
+        "Destination": "BRC", 
+        "Distance": 1323.0, 
+        "FlightTime": "02:01:00", 
+        "Origin": "AEP"
+    }, 
+    {
+        "BlockTime": "02:00:00", 
+        "Destination": "AEP", 
+        "Distance": 1323.0, 
+        "FlightTime": "02:01:00", 
+        "Origin": "BRC"
+    }, 
+    {
+        "BlockTime": "01:20:00", 
+        "Destination": "COR", 
+        "Distance": 653.0, 
+        "FlightTime": "01:03:00", 
+        "Origin": "AEP"
+    }, 
+    {
+        "BlockTime": "01:10:00", 
+        "Destination": "AEP", 
+        "Distance": 653.0, 
+        "FlightTime": "01:03:00", 
+        "Origin": "COR"
+    }, 
+    {
+        "BlockTime": "02:15:00", 
+        "Destination": "JUJ", 
+        "Distance": 1310.0, 
+        "FlightTime": "01:50:00", 
+        "Origin": "AEP"
+    }, 
+    {
+        "BlockTime": "01:50:00", 
+        "Destination": "AEP", 
+        "Distance": 1310.0, 
+        "FlightTime": "01:50:00", 
+        "Origin": "JUJ"
+    }, 
+    {
+        "BlockTime": "01:50:00", 
+        "Destination": "LGS", 
+        "Distance": 1021.0, 
+        "FlightTime": "01:46:00", 
+        "Origin": "AEP"
+    }, 
+    {
+        "BlockTime": "01:35:00", 
+        "Destination": "AEP", 
+        "Distance": 1021.0, 
+        "FlightTime": "01:46:00", 
+        "Origin": "LGS"
+    }, 
+    {
+        "BlockTime": "01:50:00", 
+        "Destination": "PMY", 
+        "Distance": 1075.0, 
+        "FlightTime": "01:37:00", 
+        "Origin": "AEP"
+    }, 
+    {
+        "BlockTime": "01:45:00", 
+        "Destination": "AEP", 
+        "Distance": 1075.0, 
+        "FlightTime": "01:37:00", 
+        "Origin": "PMY"
+    }, 
+    {
+        "BlockTime": "02:00:00", 
+        "Destination": "SLA", 
+        "Distance": 1286.0, 
+        "FlightTime": "01:51:00", 
+        "Origin": "AEP"
+    }, 
+    {
+        "BlockTime": "01:50:00", 
+        "Destination": "AEP", 
+        "Distance": 1286.0, 
+        "FlightTime": "01:51:00", 
+        "Origin": "SLA"
+    }, 
+    {
+        "BlockTime": "04:10:00", 
+        "Destination": "EZE", 
+        "Distance": 2811.0, 
+        "FlightTime": "03:56:00", 
+        "Origin": "BPS"
+    }, 
+    {
+        "BlockTime": "03:40:00", 
+        "Destination": "BPS", 
+        "Distance": 2811.0, 
+        "FlightTime": "03:56:00", 
+        "Origin": "EZE"
+    }, 
+    {
+        "BlockTime": "02:35:00", 
+        "Destination": "IGR", 
+        "Distance": 1899.24, 
+        "FlightTime": "02:25:00", 
+        "Origin": "BPS"
+    }, 
+    {
+        "BlockTime": "00:40:00", 
+        "Destination": "EQS", 
+        "Distance": 198.0, 
+        "FlightTime": "00:27:00", 
+        "Origin": "BRC"
+    }, 
+    {
+        "BlockTime": "00:30:00", 
+        "Destination": "BRC", 
+        "Distance": 198.0, 
+        "FlightTime": "00:27:00", 
+        "Origin": "EQS"
+    }, 
+    {
+        "BlockTime": "03:05:00", 
+        "Destination": "EZE", 
+        "Distance": 2073.0, 
+        "FlightTime": "02:56:00", 
+        "Origin": "CFB"
+    }, 
+    {
+        "BlockTime": "03:00:00", 
+        "Destination": "CFB", 
+        "Distance": 2073.0, 
+        "FlightTime": "02:56:00", 
+        "Origin": "EZE"
+    }, 
+    {
+        "BlockTime": "01:10:00", 
+        "Destination": "EZE", 
+        "Distance": 653.0, 
+        "FlightTime": "01:04:00", 
+        "Origin": "COR"
+    }, 
+    {
+        "BlockTime": "01:10:00", 
+        "Destination": "COR", 
+        "Distance": 653.0, 
+        "FlightTime": "01:04:00", 
+        "Origin": "EZE"
+    }, 
+    {
+        "BlockTime": "02:25:00", 
+        "Destination": "FLN", 
+        "Distance": 1570.0, 
+        "FlightTime": "02:01:00", 
+        "Origin": "COR"
+    }, 
+    {
+        "BlockTime": "02:30:00", 
+        "Destination": "COR", 
+        "Distance": 1570.0, 
+        "FlightTime": "02:01:00", 
+        "Origin": "FLN"
+    }, 
+    {
+        "BlockTime": "01:10:00", 
+        "Destination": "SLA", 
+        "Distance": 730.0, 
+        "FlightTime": "01:05:00", 
+        "Origin": "COR"
+    }, 
+    {
+        "BlockTime": "01:10:00", 
+        "Destination": "COR", 
+        "Distance": 730.0, 
+        "FlightTime": "01:05:00", 
+        "Origin": "SLA"
+    }, 
+    {
+        "BlockTime": "04:20:00", 
+        "Destination": "SSA", 
+        "Distance": 3168.0, 
+        "FlightTime": "04:05:00", 
+        "Origin": "EZE"
+    }, 
+    {
+        "BlockTime": "04:35:00", 
+        "Destination": "EZE", 
+        "Distance": 3168.0, 
+        "FlightTime": "04:02:00", 
+        "Origin": "SSA"
+    }, 
+    {
+        "BlockTime": "02:00:00", 
+        "Destination": "JUJ", 
+        "Distance": 1310.0, 
+        "FlightTime": "01:55:00", 
+        "Origin": "EZE"
+    }, 
+    {
+        "BlockTime": "01:50:00", 
+        "Destination": "EZE", 
+        "Distance": 1310.0, 
+        "FlightTime": "01:55:00", 
+        "Origin": "JUJ"
+    }, 
+    {
+        "BlockTime": "01:35:00", 
+        "Destination": "EZE", 
+        "Distance": 1049.0, 
+        "FlightTime": "01:38:00", 
+        "Origin": "IGR"
+    }, 
+    {
+        "BlockTime": "01:40:00", 
+        "Destination": "IGR", 
+        "Distance": 1049.0, 
+        "FlightTime": "01:38:00", 
+        "Origin": "EZE"
+    }, 
+    {
+        "BlockTime": "01:50:00", 
+        "Destination": "SLA", 
+        "Distance": 1112.0, 
+        "FlightTime": "01:48:00", 
+        "Origin": "IGR"
+    }, 
+    {
+        "BlockTime": "01:50:00", 
+        "Destination": "IGR", 
+        "Distance": 1112.0, 
+        "FlightTime": "01:48:00", 
+        "Origin": "SLA"
+    }, 
+    {
+        "BlockTime": "05:25:00", 
+        "Destination": "PMV", 
+        "Distance": 3907.0, 
+        "FlightTime": "04:55:00", 
+        "Origin": "JUJ"
+    }, 
+    {
+        "BlockTime": "05:30:00", 
+        "Destination": "JUJ", 
+        "Distance": 3907.0, 
+        "FlightTime": "04:55:00", 
+        "Origin": "PMV"
+    }, 
+    {
+        "BlockTime": "00:20:00", 
+        "Destination": "SLA", 
+        "Distance": 64.0, 
+        "FlightTime": "00:16:00", 
+        "Origin": "JUJ"
+    }, 
+    {
+        "BlockTime": "00:20:00", 
+        "Destination": "JUJ", 
+        "Distance": 64.0, 
+        "FlightTime": "00:16:00", 
+        "Origin": "SLA"
+    }, 
+    {
+        "BlockTime": "03:35:00", 
+        "Destination": "LGS", 
+        "Distance": 2598.0, 
+        "FlightTime": "03:22:00", 
+        "Origin": "SAO"
+    }, 
+    {
+        "BlockTime": "03:35:00", 
+        "Destination": "SAO", 
+        "Distance": 0.0, 
+        "FlightTime": "03:22:00", 
+        "Origin": "LGS"
+    }, 
+    {
+        "BlockTime": "00:50:00", 
+        "Destination": "SSA", 
+        "Distance": 399.0, 
+        "FlightTime": "00:43:00", 
+        "Origin": "BPS"
+    }, 
+    {
+        "BlockTime": "01:00:00", 
+        "Destination": "BPS", 
+        "Distance": 399.0, 
+        "FlightTime": "00:43:00", 
+        "Origin": "SSA"
+    }, 
+    {
+        "BlockTime": "03:10:00", 
+        "Destination": "COR", 
+        "Distance": 2377.8000000000002, 
+        "FlightTime": "03:28:00", 
+        "Origin": "CFB"
+    }, 
+    {
+        "BlockTime": "03:05:00", 
+        "Destination": "CFB", 
+        "Distance": 2377.8000000000002, 
+        "FlightTime": "02:50:00", 
+        "Origin": "COR"
+    }, 
+    {
+        "BlockTime": "02:00:00", 
+        "Destination": "FLN", 
+        "Distance": 1237.0, 
+        "FlightTime": "01:45:00", 
+        "Origin": "EZE"
+    }, 
+    {
+        "BlockTime": "02:00:00", 
+        "Destination": "EZE", 
+        "Distance": 1237.0, 
+        "FlightTime": "01:45:00", 
+        "Origin": "FLN"
+    }, 
+    {
+        "BlockTime": "00:50:00", 
+        "Destination": "ROS", 
+        "Distance": 291.0, 
+        "FlightTime": "00:43:00", 
+        "Origin": "EZE"
+    }, 
+    {
+        "BlockTime": "00:50:00", 
+        "Destination": "EZE", 
+        "Distance": 291.0, 
+        "FlightTime": "00:43:00", 
+        "Origin": "ROS"
+    }, 
+    {
+        "BlockTime": "02:10:00", 
+        "Destination": "BRC", 
+        "Distance": 1323.0, 
+        "FlightTime": "02:01:00", 
+        "Origin": "EPA"
+    }, 
+    {
+        "BlockTime": "01:15:00", 
+        "Destination": "COR", 
+        "Distance": 653.0, 
+        "FlightTime": "01:03:00", 
+        "Origin": "EPA"
+    }, 
+    {
+        "BlockTime": "02:05:00", 
+        "Destination": "JUJ", 
+        "Distance": 1310.0, 
+        "FlightTime": "01:50:00", 
+        "Origin": "EPA"
+    }, 
+    {
+        "BlockTime": "01:50:00", 
+        "Destination": "LGS", 
+        "Distance": 1004.3099999999999, 
+        "FlightTime": "01:46:00", 
+        "Origin": "EPA"
+    }, 
+    {
+        "BlockTime": "01:50:00", 
+        "Destination": "PMY", 
+        "Distance": 1075.0, 
+        "FlightTime": "01:37:00", 
+        "Origin": "EPA"
+    }, 
+    {
+        "BlockTime": "02:00:00", 
+        "Destination": "SLA", 
+        "Distance": 1286.0, 
+        "FlightTime": "01:51:00", 
+        "Origin": "EPA"
+    }, 
+    {
+        "BlockTime": "01:55:00", 
+        "Destination": "EPA", 
+        "Distance": 1323.0, 
+        "FlightTime": "02:01:00", 
+        "Origin": "BRC"
+    }, 
+    {
+        "BlockTime": "01:10:00", 
+        "Destination": "EPA", 
+        "Distance": 653.0, 
+        "FlightTime": "01:03:00", 
+        "Origin": "COR"
+    }, 
+    {
+        "BlockTime": "01:50:00", 
+        "Destination": "EPA", 
+        "Distance": 1310.0, 
+        "FlightTime": "01:50:00", 
+        "Origin": "JUJ"
+    }, 
+    {
+        "BlockTime": "01:35:00", 
+        "Destination": "EPA", 
+        "Distance": 0.0, 
+        "FlightTime": "01:46:00", 
+        "Origin": "LGS"
+    }, 
+    {
+        "BlockTime": "01:45:00", 
+        "Destination": "EPA", 
+        "Distance": 1075.0, 
+        "FlightTime": "01:37:00", 
+        "Origin": "PMY"
+    }, 
+    {
+        "BlockTime": "01:50:00", 
+        "Destination": "EPA", 
+        "Distance": 1286.0, 
+        "FlightTime": "01:51:00", 
+        "Origin": "SLA"
+    }, 
+    {
+        "BlockTime": "04:05:00", 
+        "Destination": "BPS", 
+        "Distance": 3032.0, 
+        "FlightTime": "04:05:00", 
+        "Origin": "COR"
+    }, 
+    {
+        "BlockTime": "05:10:00", 
+        "Destination": "REC", 
+        "Distance": 3977.0, 
+        "FlightTime": "05:10:00", 
+        "Origin": "COR"
+    }, 
+    {
+        "BlockTime": "04:20:00", 
+        "Destination": "COR", 
+        "Distance": 3032.0, 
+        "FlightTime": "04:20:00", 
+        "Origin": "BPS"
+    }, 
+    {
+        "BlockTime": "05:20:00", 
+        "Destination": "COR", 
+        "Distance": 3977.0, 
+        "FlightTime": "00:00:00", 
+        "Origin": "REC"
+    }, 
+    {
+        "BlockTime": "01:50:00", 
+        "Destination": "COR", 
+        "Distance": 136.0, 
+        "FlightTime": "01:50:00", 
+        "Origin": "IGR"
+    }, 
+    {
+        "BlockTime": "04:00:00", 
+        "Destination": "MAO", 
+        "Distance": 510.0, 
+        "FlightTime": "04:00:00", 
+        "Origin": "PUJ"
+    }, 
+    {
+        "BlockTime": "01:50:00", 
+        "Destination": "JUJ", 
+        "Distance": 1035.0, 
+        "FlightTime": "01:35:00", 
+        "Origin": "ROS"
+    }, 
+    {
+        "BlockTime": "01:40:00", 
+        "Destination": "ROS", 
+        "Distance": 1006.0, 
+        "FlightTime": "01:40:00", 
+        "Origin": "IGR"
+    }, 
+    {
+        "BlockTime": "01:50:00", 
+        "Destination": "ROS", 
+        "Distance": 1035.0, 
+        "FlightTime": "01:35:00", 
+        "Origin": "JUJ"
+    }, 
+    {
+        "BlockTime": "03:45:00", 
+        "Destination": "MAO", 
+        "Distance": 2686.02, 
+        "FlightTime": "00:00:00", 
+        "Origin": "AZS"
+    }, 
+    {
+        "BlockTime": "02:57:00", 
+        "Destination": "SFN", 
+        "Distance": 2090.5999999999999, 
+        "FlightTime": "00:00:00", 
+        "Origin": "CFB"
+    }, 
+    {
+        "BlockTime": "04:50:00", 
+        "Destination": "MAO", 
+        "Distance": 3522.0900000000001, 
+        "FlightTime": "00:00:00", 
+        "Origin": "EZE"
+    }, 
+    {
+        "BlockTime": "03:45:00", 
+        "Destination": "MAO", 
+        "Distance": 2423.9400000000001, 
+        "FlightTime": "00:00:00", 
+        "Origin": "JUJ"
+    }, 
+    {
+        "BlockTime": "03:50:00", 
+        "Destination": "AZS", 
+        "Distance": 2686.02, 
+        "FlightTime": "00:00:00", 
+        "Origin": "MAO"
+    }, 
+    {
+        "BlockTime": "04:50:00", 
+        "Destination": "EZE", 
+        "Distance": 3522.0900000000001, 
+        "FlightTime": "00:00:00", 
+        "Origin": "MAO"
+    }, 
+    {
+        "BlockTime": "04:10:00", 
+        "Destination": "IGR", 
+        "Distance": 3000.0, 
+        "FlightTime": "04:10:00", 
+        "Origin": "NAT"
+    }, 
+    {
+        "BlockTime": "04:00:00", 
+        "Destination": "IGR", 
+        "Distance": 2844.0, 
+        "FlightTime": "04:00:00", 
+        "Origin": "REC"
+    }, 
+    {
+        "BlockTime": "03:30:00", 
+        "Destination": "ROS", 
+        "Distance": 2843.6900000000001, 
+        "FlightTime": "03:30:00", 
+        "Origin": "BPS"
+    }, 
+    {
+        "BlockTime": "00:45:00", 
+        "Destination": "PMY", 
+        "Distance": 386.50999999999999, 
+        "FlightTime": "00:45:00", 
+        "Origin": "CRD"
+    }, 
+    {
+        "BlockTime": "04:05:00", 
+        "Destination": "PUJ", 
+        "Distance": 2558.3200000000002, 
+        "FlightTime": "04:05:00", 
+        "Origin": "MAO"
+    }, 
+    {
+        "BlockTime": "03:45:00", 
+        "Destination": "BPS", 
+        "Distance": 2844.0, 
+        "FlightTime": "03:45:00", 
+        "Origin": "ROS"
+    }, 
+    {
+        "BlockTime": "05:40:00", 
+        "Destination": "EZE", 
+        "Distance": 3863.0, 
+        "FlightTime": "05:30:00", 
+        "Origin": "SLZ"
+    }, 
+    {
+        "BlockTime": "01:45:00", 
+        "Destination": "CGR", 
+        "Distance": 0.0, 
+        "FlightTime": "01:30:00", 
+        "Origin": "POA"
+    }, 
+    {
+        "BlockTime": "07:20:00", 
+        "Destination": "SNU", 
+        "Distance": 6734.7299999999996, 
+        "FlightTime": "07:00:00", 
+        "Origin": "EZE"
+    }, 
+    {
+        "BlockTime": "03:40:00", 
+        "Destination": "SNU", 
+        "Distance": 0.0, 
+        "FlightTime": "03:00:30", 
+        "Origin": "GYE"
+    }, 
+    {
+        "BlockTime": "03:45:00", 
+        "Destination": "GYE", 
+        "Distance": 2726.0, 
+        "FlightTime": "03:35:00", 
+        "Origin": "SNU"
+    }, 
+    {
+        "BlockTime": "00:43:00", 
+        "Destination": "TTG", 
+        "Distance": 302.0, 
+        "FlightTime": "00:40:00", 
+        "Origin": "SLA"
+    }, 
+    {
+        "BlockTime": "00:32:00", 
+        "Destination": "ORA", 
+        "Distance": 222.0, 
+        "FlightTime": "00:36:00", 
+        "Origin": "SLA"
+    }, 
+    {
+        "BlockTime": "00:19:00", 
+        "Destination": "ORA", 
+        "Distance": 81.0, 
+        "FlightTime": "00:22:00", 
+        "Origin": "TTG"
+    }, 
+    {
+        "BlockTime": "00:19:00", 
+        "Destination": "TTG", 
+        "Distance": 81.0, 
+        "FlightTime": "00:22:00", 
+        "Origin": "ORA"
+    }, 
+    {
+        "BlockTime": "00:43:00", 
+        "Destination": "SLA", 
+        "Distance": 302.0, 
+        "FlightTime": "00:40:00", 
+        "Origin": "TTG"
+    }, 
+    {
+        "BlockTime": "00:32:00", 
+        "Destination": "SLA", 
+        "Distance": 222.0, 
+        "FlightTime": "00:36:00", 
+        "Origin": "ORA"
+    }, 
+    {
+        "BlockTime": "04:55:00", 
+        "Destination": "SNU", 
+        "Distance": 3557.5999999999999, 
+        "FlightTime": "04:32:00", 
+        "Origin": "MAO"
+    }, 
+    {
+        "BlockTime": "04:50:00", 
+        "Destination": "MAO", 
+        "Distance": 3557.0, 
+        "FlightTime": "00:00:00", 
+        "Origin": "SNU"
+    }, 
+    {
+        "BlockTime": "03:30:00", 
+        "Destination": "JUJ", 
+        "Distance": 2423.9400000000001, 
+        "FlightTime": "00:00:00", 
+        "Origin": "MAO"
+    }, 
+    {
+        "BlockTime": "04:20:00", 
+        "Destination": "MAO", 
+        "Distance": 3159.3699999999999, 
+        "FlightTime": "04:10:00", 
+        "Origin": "COR"
+    }, 
+    {
+        "BlockTime": "03:55:00", 
+        "Destination": "BPS", 
+        "Distance": 0.0, 
+        "FlightTime": "00:00:00", 
+        "Origin": "JUJ"
+    }, 
+    {
+        "BlockTime": "01:35:00", 
+        "Destination": "UAQ", 
+        "Distance": 0.0, 
+        "FlightTime": "01:35:00", 
+        "Origin": "ROS"
+    }, 
+    {
+        "BlockTime": "01:30:00", 
+        "Destination": "ROS", 
+        "Distance": 0.0, 
+        "FlightTime": "01:30:00", 
+        "Origin": "UAQ"
+    }, 
+    {
+        "BlockTime": "01:55:00", 
+        "Destination": "JUJ", 
+        "Distance": 0.0, 
+        "FlightTime": "01:55:00", 
+        "Origin": "IGR"
+    }, 
+    {
+        "BlockTime": "01:55:00", 
+        "Destination": "IGR", 
+        "Distance": 0.0, 
+        "FlightTime": "01:55:00", 
+        "Origin": "JUJ"
+    }, 
+    {
+        "BlockTime": "03:30:00", 
+        "Destination": "CRD", 
+        "Distance": 0.0, 
+        "FlightTime": "03:30:00", 
+        "Origin": "JUJ"
+    }, 
+    {
+        "BlockTime": "03:45:00", 
+        "Destination": "JUJ", 
+        "Distance": 0.0, 
+        "FlightTime": "03:45:00", 
+        "Origin": "CRD"
+    }, 
+    {
+        "BlockTime": "03:20:00", 
+        "Destination": "GYN", 
+        "Distance": 0.0, 
+        "FlightTime": "03:20:00", 
+        "Origin": "EZE"
+    }, 
+    {
+        "BlockTime": "03:20:00", 
+        "Destination": "EZE", 
+        "Distance": 0.0, 
+        "FlightTime": "03:20:00", 
+        "Origin": "GYN"
+    }, 
+    {
+        "BlockTime": "01:50:00", 
+        "Destination": "IGR", 
+        "Distance": 0.0, 
+        "FlightTime": "01:50:00", 
+        "Origin": "GYN"
+    }, 
+    {
+        "BlockTime": "02:00:00", 
+        "Destination": "ASU", 
+        "Distance": 0.0, 
+        "FlightTime": "02:00:00", 
+        "Origin": "EZE"
+    }, 
+    {
+        "BlockTime": "01:55:00", 
+        "Destination": "EZE", 
+        "Distance": 0.0, 
+        "FlightTime": "01:55:00", 
+        "Origin": "ASU"
+    }, 
+    {
+        "BlockTime": "02:30:00", 
+        "Destination": "POA", 
+        "Distance": 0.0, 
+        "FlightTime": "02:30:00", 
+        "Origin": "SLA"
+    }, 
+    {
+        "BlockTime": "04:10:00", 
+        "Destination": "LRM", 
+        "Distance": 0.0, 
+        "FlightTime": "04:10:00", 
+        "Origin": "MAO"
+    }, 
+    {
+        "BlockTime": "04:15:00", 
+        "Destination": "TRU", 
+        "Distance": 0.0, 
+        "FlightTime": "04:15:00", 
+        "Origin": "COR"
+    }, 
+    {
+        "BlockTime": "01:05:00", 
+        "Destination": "TBP", 
+        "Distance": 0.0, 
+        "FlightTime": "01:05:00", 
+        "Origin": "TRU"
+    }, 
+    {
+        "BlockTime": "04:05:00", 
+        "Destination": "MAO", 
+        "Distance": 0.0, 
+        "FlightTime": "04:05:00", 
+        "Origin": "LRM"
+    }, 
+    {
+        "BlockTime": "04:30:00", 
+        "Destination": "COR", 
+        "Distance": 0.0, 
+        "FlightTime": "04:30:00", 
+        "Origin": "MAO"
+    }, 
+    {
+        "BlockTime": "01:05:00", 
+        "Destination": "TRU", 
+        "Distance": 0.0, 
+        "FlightTime": "01:05:00", 
+        "Origin": "TBP"
+    }, 
+    {
+        "BlockTime": "04:15:00", 
+        "Destination": "COR", 
+        "Distance": 0.0, 
+        "FlightTime": "04:15:00", 
+        "Origin": "TRU"
+    }, 
+    {
+        "BlockTime": "00:50:00", 
+        "Destination": "CJC", 
+        "Distance": 0.0, 
+        "FlightTime": "00:50:00", 
+        "Origin": "JUJ"
+    }, 
+    {
+        "BlockTime": "00:50:00", 
+        "Destination": "JUJ", 
+        "Distance": 0.0, 
+        "FlightTime": "00:50:00", 
+        "Origin": "CJC"
+    }, 
+    {
+        "BlockTime": "00:50:00", 
+        "Destination": "SLA", 
+        "Distance": 0.0, 
+        "FlightTime": "00:50:00", 
+        "Origin": "CJC"
+    }, 
+    {
+        "BlockTime": "04:15:00", 
+        "Destination": "EZE", 
+        "Distance": 0.0, 
+        "FlightTime": "04:15:00", 
+        "Origin": "TRU"
+    }, 
+    {
+        "BlockTime": "03:35:00", 
+        "Destination": "MAO", 
+        "Distance": 0.0, 
+        "FlightTime": "03:35:00", 
+        "Origin": "ASU"
+    }, 
+    {
+        "BlockTime": "04:00:00", 
+        "Destination": "POP", 
+        "Distance": 0.0, 
+        "FlightTime": "04:00:00", 
+        "Origin": "MAO"
+    }, 
+    {
+        "BlockTime": "03:40:00", 
+        "Destination": "ASU", 
+        "Distance": 0.0, 
+        "FlightTime": "03:40:00", 
+        "Origin": "MAO"
+    }, 
+    {
+        "BlockTime": "03:05:00", 
+        "Destination": "AUA", 
+        "Distance": 0.0, 
+        "FlightTime": "03:05:00", 
+        "Origin": "MAO"
+    }
+]

@@ -1,0 +1,74 @@
+[
+    {
+        "Destination": "AEP", 
+        "Origin": "BRC",
+        "Aircraft": "BTH", 
+        "Time": "02:00:00", 
+        "StartDateTime": "2016-10-01 10:00:00",
+        "Type": 1
+    },
+    {
+        "Destination": "AEP", 
+        "Origin": "AEP",
+        "Aircraft": "BTH", 
+        "Time": "01:01:00", 
+        "StartDateTime": "2016-10-01 13:00:00",
+        "Type": 2
+    },
+    {
+        "Destination": "SLA", 
+        "Origin": "AEP",
+        "Aircraft": "BTH", 
+        "Time": "01:55:00", 
+        "StartDateTime": "2016-10-01 15:10:00",
+        "Type": 1
+    },
+    {
+        "Destination": "SLA", 
+        "Origin": "SLA",
+        "Aircraft": "BTH", 
+        "Time": "00:20:00", 
+        "StartDateTime": "2016-10-01 15:30:00",
+        "Type": 2
+    },
+    {
+        "Destination": "JUJ", 
+        "Origin": "SLA",
+        "Aircraft": "BTH", 
+        "Time": "00:20:00", 
+        "StartDateTime": "2016-10-01 15:50:00",
+        "Type": 1
+    },
+    {
+        "Destination": "JUJ", 
+        "Origin": "JUJ",
+        "Aircraft": "BTH", 
+        "Time": "00:31:00", 
+        "StartDateTime": "2016-10-01 16:30:00",
+        "Type": 2
+    },
+    {
+        "Destination": "AEP", 
+        "Origin": "JUJ",
+        "Aircraft": "BTH", 
+        "Time": "02:10:00", 
+        "StartDateTime": "2016-10-01 17:01:00",
+        "Type": 1
+    },
+    {
+        "Destination": "AEP", 
+        "Origin": "AEP",
+        "Aircraft": "BTH", 
+        "Time": "00:40:00", 
+        "StartDateTime": "2016-10-01 19:15:00",
+        "Type": 2
+    },
+    {
+        "Destination": "BRC", 
+        "Origin": "AEP",
+        "Aircraft": "BTH", 
+        "Time": "02:01:00", 
+        "StartDateTime": "2016-10-01 19:55:00",
+        "Type": 1
+    }
+]

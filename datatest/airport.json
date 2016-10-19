@@ -1,0 +1,590 @@
+[
+    {
+        "Code": "AEP", 
+        "Country": "ar", 
+        "Name": "Aeroparque", 
+        "Gap": "00:30:00"
+    }, 
+    {
+        "Code": "AJU", 
+        "Country": "br", 
+        "Name": "Aracaju, Bra", 
+        "Gap": "01:00:00"
+    }, 
+    {
+        "Code": "ASU", 
+        "Country": "py", 
+        "Name": "Asuncion", 
+        "Gap": "01:00:00"
+    }, 
+    {
+        "Code": "AUA", 
+        "Country": "aw", 
+        "Name": "Aruba", 
+        "Gap": "01:00:00"
+    }, 
+    {
+        "Code": "AZS", 
+        "Country": "do", 
+        "Name": "Samana", 
+        "Gap": "01:00:00"
+    }, 
+    {
+        "Code": "BHI", 
+        "Country": "ar", 
+        "Name": "Bahia Blanca", 
+        "Gap": "00:25:00"
+    }, 
+    {
+        "Code": "BOG", 
+        "Country": "co", 
+        "Name": "Bogot\u00e1", 
+        "Gap": "01:00:00"
+    }, 
+    {
+        "Code": "BPS", 
+        "Country": "br", 
+        "Name": "Porto Seguro Brasil", 
+        "Gap": "01:00:00"
+    }, 
+    {
+        "Code": "BRC", 
+        "Country": "ar", 
+        "Name": "Bariloche", 
+        "Gap": "00:25:00"
+    }, 
+    {
+        "Code": "CBF", 
+        "Country": "br", 
+        "Name": "Cabo Frio", 
+        "Gap": "01:00:00"
+    }, 
+    {
+        "Code": "CCS", 
+        "Country": "ve", 
+        "Name": "Caracas", 
+        "Gap": "01:00:00"
+    }, 
+    {
+        "Code": "CFX", 
+        "Country": "ar", 
+        "Name": "Cafayate", 
+        "Gap": "00:25:00"
+    }, 
+    {
+        "Code": "CGR", 
+        "Country": "br", 
+        "Name": "Campo Grande", 
+        "Gap": "01:00:00"
+    }, 
+    {
+        "Code": "CNF", 
+        "Country": "br", 
+        "Name": "Belo Horizonte", 
+        "Gap": "01:00:00"
+    }, 
+    {
+        "Code": "COR", 
+        "Country": "ar", 
+        "Name": "C\u00f3rdoba", 
+        "Gap": "00:25:00"
+    }, 
+    {
+        "Code": "CPC", 
+        "Country": "ar", 
+        "Name": "Chapelco", 
+        "Gap": "00:25:00"
+    }, 
+    {
+        "Code": "CRD", 
+        "Country": "ar", 
+        "Name": "Comodoro", 
+        "Gap": "00:25:00"
+    }, 
+    {
+        "Code": "CTC", 
+        "Country": "ar", 
+        "Name": "Catamarca", 
+        "Gap": "00:25:00"
+    }, 
+    {
+        "Code": "EPA", 
+        "Country": "ar", 
+        "Name": "Palomar", 
+        "Gap": "00:25:00"
+    }, 
+    {
+        "Code": "EQS", 
+        "Country": "ar", 
+        "Name": "Esquel", 
+        "Gap": "00:25:00"
+    }, 
+    {
+        "Code": "EZE", 
+        "Country": "ar", 
+        "Name": "Ezeiza", 
+        "Gap": "00:25:00"
+    }, 
+    {
+        "Code": "FLN", 
+        "Country": "br", 
+        "Name": "Florianopolis", 
+        "Gap": "01:00:00"
+    }, 
+    {
+        "Code": "FOR", 
+        "Country": "br", 
+        "Name": "Fortaleza", 
+        "Gap": "01:00:00"
+    }, 
+    {
+        "Code": "FTE", 
+        "Country": "ar", 
+        "Name": "Calafate", 
+        "Gap": "00:25:00"
+    }, 
+    {
+        "Code": "GIG", 
+        "Country": "br", 
+        "Name": "Rio Janeiro", 
+        "Gap": "01:00:00"
+    }, 
+    {
+        "Code": "GPI", 
+        "Country": "ar", 
+        "Name": "General Pico", 
+        "Gap": "00:25:00"
+    }, 
+    {
+        "Code": "GRU", 
+        "Country": "br", 
+        "Name": "Guarulos", 
+        "Gap": "01:00:00"
+    }, 
+    {
+        "Code": "GYE", 
+        "Country": "ec", 
+        "Name": "Guayaquil", 
+        "Gap": "01:00:00"
+    }, 
+    {
+        "Code": "IGR", 
+        "Country": "ar", 
+        "Name": "Iguaz\u00fa", 
+        "Gap": "00:25:00"
+    }, 
+    {
+        "Code": "IOS", 
+        "Country": "br", 
+        "Name": "Ilheus, Br", 
+        "Gap": "01:00:00"
+    }, 
+    {
+        "Code": "IQQ", 
+        "Country": "br", 
+        "Name": "Iquique", 
+        "Gap": "01:00:00"
+    }, 
+    {
+        "Code": "IRJ", 
+        "Country": "ar", 
+        "Name": "La Rioja", 
+        "Gap": "00:25:00"
+    }, 
+    {
+        "Code": "JOI", 
+        "Country": "br", 
+        "Name": "Joinville", 
+        "Gap": "01:00:00"
+    }, 
+    {
+        "Code": "JUJ", 
+        "Country": "ar", 
+        "Name": "Jujuy", 
+        "Gap": "00:25:00"
+    }, 
+    {
+        "Code": "LGS", 
+        "Country": "ar", 
+        "Name": "Las Le\u00f1as", 
+        "Gap": "00:25:00"
+    }, 
+    {
+        "Code": "LIM", 
+        "Country": "pe", 
+        "Name": "Lima", 
+        "Gap": "01:00:00"
+    }, 
+    {
+        "Code": "LUQ", 
+        "Country": "ar", 
+        "Name": "San Luis", 
+        "Gap": "00:25:00"
+    }, 
+    {
+        "Code": "MAO", 
+        "Country": "br", 
+        "Name": "Manaos", 
+        "Gap": "01:00:00"
+    }, 
+    {
+        "Code": "MCZ", 
+        "Country": "br", 
+        "Name": "Maceio", 
+        "Gap": "01:00:00"
+    }, 
+    {
+        "Code": "MDQ", 
+        "Country": "ar", 
+        "Name": "Mar del Plata", 
+        "Gap": "00:25:00"
+    }, 
+    {
+        "Code": "MDZ", 
+        "Country": "ar", 
+        "Name": "Mendoza", 
+        "Gap": "00:25:00"
+    }, 
+    {
+        "Code": "MIA", 
+        "Country": "us", 
+        "Name": "Miami", 
+        "Gap": "01:00:00"
+    }, 
+    {
+        "Code": "MLG", 
+        "Country": "ar", 
+        "Name": "Malargue", 
+        "Gap": "00:25:00"
+    }, 
+    {
+        "Code": "MPN", 
+        "Country": "uk", 
+        "Name": "Mount Pleasant, Falkland Island", 
+        "Gap": "01:00:00"
+    }, 
+    {
+        "Code": "MVD", 
+        "Country": "uy", 
+        "Name": "Montevideo", 
+        "Gap": "01:00:00"
+    }, 
+    {
+        "Code": "NAT", 
+        "Country": "br", 
+        "Name": "Natal", 
+        "Gap": "01:00:00"
+    }, 
+    {
+        "Code": "NQN", 
+        "Country": "ar", 
+        "Name": "Nuequen", 
+        "Gap": "00:25:00"
+    }, 
+    {
+        "Code": "NVT", 
+        "Country": "br", 
+        "Name": "Navegantes", 
+        "Gap": "01:00:00"
+    }, 
+    {
+        "Code": "ORA", 
+        "Country": "ar", 
+        "Name": "Oran", 
+        "Gap": "00:25:00"
+    }, 
+    {
+        "Code": "PDE", 
+        "Country": "uy", 
+        "Name": "Punta del Este", 
+        "Gap": "01:00:00"
+    }, 
+    {
+        "Code": "PDP", 
+        "Country": "uy", 
+        "Name": "Punta del Este", 
+        "Gap": "01:00:00"
+    }, 
+    {
+        "Code": "PMC", 
+        "Country": "cl", 
+        "Name": "Puertp Mont", 
+        "Gap": "01:00:00"
+    }, 
+    {
+        "Code": "PMV", 
+        "Country": "ve", 
+        "Name": "Isla Margarita", 
+        "Gap": "01:00:00"
+    }, 
+    {
+        "Code": "PMY", 
+        "Country": "ar", 
+        "Name": "Puerto Madryn", 
+        "Gap": "00:25:00"
+    }, 
+    {
+        "Code": "POA", 
+        "Country": "br", 
+        "Name": "Porto Alegre", 
+        "Gap": "01:00:00"
+    }, 
+    {
+        "Code": "POP", 
+        "Country": "do", 
+        "Name": "Puerto Plata", 
+        "Gap": "01:00:00"
+    }, 
+    {
+        "Code": "PRA", 
+        "Country": "ar", 
+        "Name": "Paran\u00e1", 
+        "Gap": "00:25:00"
+    }, 
+    {
+        "Code": "PSS", 
+        "Country": "ar", 
+        "Name": "Posadas", 
+        "Gap": "00:25:00"
+    }, 
+    {
+        "Code": "PUH", 
+        "Country": "ar", 
+        "Name": "Prueba PUH", 
+        "Gap": "00:25:00"
+    }, 
+    {
+        "Code": "PVR", 
+        "Country": "mx", 
+        "Name": "Puerto Vallarta", 
+        "Gap": "01:00:00"
+    }, 
+    {
+        "Code": "REC", 
+        "Country": "br", 
+        "Name": "Recife", 
+        "Gap": "01:00:00"
+    }, 
+    {
+        "Code": "REL", 
+        "Country": "ar", 
+        "Name": "Trelew", 
+        "Gap": "00:25:00"
+    }, 
+    {
+        "Code": "RES", 
+        "Country": "ar", 
+        "Name": "Resistencia", 
+        "Gap": "00:25:00"
+    }, 
+    {
+        "Code": "RGA", 
+        "Country": "br", 
+        "Name": "Rio Grande", 
+        "Gap": "01:00:00"
+    }, 
+    {
+        "Code": "RGL", 
+        "Country": "ar", 
+        "Name": "Rio Gallegos", 
+        "Gap": "00:25:00"
+    }, 
+    {
+        "Code": "ROS", 
+        "Country": "ar", 
+        "Name": "Rosario", 
+        "Gap": "00:25:00"
+    }, 
+    {
+        "Code": "SAO", 
+        "Country": "br", 
+        "Name": "San Pablo", 
+        "Gap": "01:00:00"
+    }, 
+    {
+        "Code": "SCL", 
+        "Country": "cl", 
+        "Name": "Santiago de Chile", 
+        "Gap": "01:00:00"
+    }, 
+    {
+        "Code": "SDE", 
+        "Country": "ar", 
+        "Name": "Santiago del Estero", 
+        "Gap": "00:25:00"
+    }, 
+    {
+        "Code": "SFN", 
+        "Country": "ar", 
+        "Name": "Santa Fe", 
+        "Gap": "00:25:00"
+    }, 
+    {
+        "Code": "SLA", 
+        "Country": "ar", 
+        "Name": "Salta", 
+        "Gap": "00:25:00"
+    }, 
+    {
+        "Code": "SLZ", 
+        "Country": "br", 
+        "Name": "Sao Luis, Br", 
+        "Gap": "01:00:00"
+    }, 
+    {
+        "Code": "SSA", 
+        "Country": "br", 
+        "Name": "Salvador", 
+        "Gap": "01:00:00"
+    }, 
+    {
+        "Code": "SXM", 
+        "Country": "fr", 
+        "Name": "Saint Marteen", 
+        "Gap": "01:00:00"
+    }, 
+    {
+        "Code": "TJA", 
+        "Country": "bo", 
+        "Name": "Tarija, Bolivia", 
+        "Gap": "01:00:00"
+    }, 
+    {
+        "Code": "TTG", 
+        "Country": "ar", 
+        "Name": "Tartagal", 
+        "Gap": "00:25:00"
+    }, 
+    {
+        "Code": "TUC", 
+        "Country": "ar", 
+        "Name": "Tucum\u00e1n", 
+        "Gap": "00:25:00"
+    }, 
+    {
+        "Code": "UAQ", 
+        "Country": "ar", 
+        "Name": "San Juan", 
+        "Gap": "00:25:00"
+    }, 
+    {
+        "Code": "UIS", 
+        "Country": "ar", 
+        "Name": "San luis", 
+        "Gap": "00:25:00"
+    }, 
+    {
+        "Code": "USH", 
+        "Country": "ar", 
+        "Name": "Ushuaia", 
+        "Gap": "00:25:00"
+    }, 
+    {
+        "Code": "VCP", 
+        "Country": "br", 
+        "Name": "Viracopos", 
+        "Gap": "01:00:00"
+    }, 
+    {
+        "Code": "VDM", 
+        "Country": "ar", 
+        "Name": "Viedma", 
+        "Gap": "00:25:00"
+    }, 
+    {
+        "Code": "VLG", 
+        "Country": "ar", 
+        "Name": "Villa Gesell", 
+        "Gap": "00:25:00"
+    }, 
+    {
+        "Code": "VRA", 
+        "Country": "cu", 
+        "Name": "Varadero,Cuba", 
+        "Gap": "01:00:00"
+    }, 
+    {
+        "Code": "VVI", 
+        "Country": "bo", 
+        "Name": "Santa Cruz", 
+        "Gap": "01:00:00"
+    }, 
+    {
+        "Code": "MDE", 
+        "Country": "co", 
+        "Name": "Medellin", 
+        "Gap": "01:00:00"
+    }, 
+    {
+        "Code": "RHD", 
+        "Country": "ar", 
+        "Name": "R\u00edo Hondo", 
+        "Gap": "00:25:00"
+    }, 
+    {
+        "Code": "CLO", 
+        "Country": "co", 
+        "Name": "Cali", 
+        "Gap": "01:00:00"
+    }, 
+    {
+        "Code": "CPO", 
+        "Country": "cl", 
+        "Name": "Copiapo", 
+        "Gap": "01:00:00"
+    }, 
+    {
+        "Code": "RSA", 
+        "Country": "ar", 
+        "Name": "Santa Rosa", 
+        "Gap": "01:00:00"
+    }, 
+    {
+        "Code": "XAP", 
+        "Country": "br", 
+        "Name": "CHAPECO", 
+        "Gap": "01:00:00"
+    }, 
+    {
+        "Code": "IQT", 
+        "Country": "pe", 
+        "Name": "IQUITOS", 
+        "Gap": "01:00:00"
+    }, 
+    {
+        "Code": "PBC", 
+        "Country": "mx", 
+        "Name": "PUEBLA", 
+        "Gap": "01:00:00"
+    }, 
+    {
+        "Code": "SDQ", 
+        "Country": "do", 
+        "Name": "Sant Domingo", 
+        "Gap": "01:00:00"
+    }, 
+    {
+        "Code": "UIO", 
+        "Country": "ec", 
+        "Name": "QUITO", 
+        "Gap": "01:00:00"
+    }, 
+    {
+        "Code": "VIG", 
+        "Country": "ve", 
+        "Name": "EL VIGIA", 
+        "Gap": "01:00:00"
+    }, 
+    {
+        "Code": "CWB", 
+        "Country": "br", 
+        "Name": "CURITIBA", 
+        "Gap": "01:00:00"
+    }, 
+    {
+        "Code": "BAQ", 
+        "Country": "co", 
+        "Name": "BARRANQUILLA", 
+        "Gap": "01:00:00"
+    }
+]

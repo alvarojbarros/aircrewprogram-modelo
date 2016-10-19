@@ -1,0 +1,62 @@
+[
+    {
+        "Code": "AB1", 
+        "Name": "AB KILOS", 
+        "Type": "A320"
+    }, 
+    {
+        "Code": "AB2", 
+        "Name": "AB KILOS", 
+        "Type": "A320"
+    }, 
+    {
+        "Code": "ARF", 
+        "Name": "MD Kilos", 
+        "Type": "MD"
+    }, 
+    {
+        "Code": "AYD", 
+        "Name": "MD Kilos", 
+        "Type": "MD"
+    }, 
+    {
+        "Code": "BAY", 
+        "Name": "MD Kilos", 
+        "Type": "MD"
+    }, 
+    {
+        "Code": "BGV", 
+        "Name": "MD libras", 
+        "Type": "MD"
+    }, 
+    {
+        "Code": "BHF", 
+        "Name": "MD libras", 
+        "Type": "MD"
+    }, 
+    {
+        "Code": "BHH", 
+        "Name": "MD Kilos", 
+        "Type": "MD"
+    }, 
+    {
+        "Code": "BTH", 
+        "Name": "MD libras", 
+        "Type": "MD"
+    }, 
+    {
+        "Code": "BZR", 
+        "Name": "MD libras", 
+        "Type": "MD"
+    }, 
+    {
+        "Code": "CCJ", 
+        "Name": "MD libras", 
+        "Type": "MD"
+    }, 
+    {
+        "Code": "CFD", 
+        "Name": "Bombardier CRJ 900", 
+        "Type": "CRJ"
+    }
+]
