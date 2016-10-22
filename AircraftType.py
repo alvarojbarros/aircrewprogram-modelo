@@ -1,16 +1,17 @@
 import Tools
 
-def fieldsDefinition():
-    res = {}
-    res['Code'] = ('str',10)
-    res['Pax'] = ('int')
-    res['CapacityKg'] = ('float')
-    return res
 
 class AircraftType(object):
 
+    def fieldsDefinition(self):
+        res = {}
+        res['Code'] = ('str',10)
+        res['Pax'] = ('int')
+        res['CapacityKg'] = ('float')
+        return res
+
     def __init__(self,fields):
-        if not Tools.validateFieldsType(fieldsDefinition(),fields): return
+        if not Tools.validateFieldsType(self.fieldsDefinition(),fields): return
         self.initOk = True
         self.Code = fields.get('Code',None)
         self.Pax = int(fields.get('Pax',0))

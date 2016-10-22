@@ -1,6 +1,9 @@
 import time
 from datetime import datetime,timedelta
 import json
+import copy
+from AircraftMovement import AircraftMovement
+from Flight import Flight
 
 def now():
     return datetime.now()
@@ -111,10 +114,10 @@ def getObjectClass(jsonlist,clasname,key=[]):
         record = var['r']
         if not hasattr(record,'initOk'):
             errors = True
-            break
+            #break
         if not record.check():
             errors = True
-            break
+            #break
         if not key:
             records.append(record)
         else:
@@ -122,7 +125,6 @@ def getObjectClass(jsonlist,clasname,key=[]):
             records[tuple(keyvalues)] = record
     if errors:
         print("Hay Errores. Revisar Log")
-        return False
     return records
 
 def validateFieldsType(fieldsDefinition,fields):
@@ -168,3 +170,60 @@ def validateFieldsType(fieldsDefinition,fields):
                 return False
 
     return True
+
+def toJson(obj,f):
+    newobj = copy.copy(obj)
+    #if obj.__class__.__name__==
+
+    for field in obj.fieldsDefinition():
+        value = getattr(newobj,field)
+        #if value.__class__.__name__ in ('AircraftMovement','dict','list'):
+        #    if value:
+        #        nvalue = toJson(value,f)
+        #        setattr(newobj,field,nvalue)
+        if value.__class__.__name__=='datetime':
+            value = getattr(newobj,field)
+            if value:
+                setattr(newobj,field,str(value))
+        '''elif value.__class__.__name__=='dict':
+            dic = getattr(newobj,field)
+            for key in dic:
+                dic[key] = dic[key].__dict__
+            f.write('%s: %s\n' %(field,dic))
+        elif value.__class__.__name__=='list':
+            listv = getattr(newobj,field)
+            for i in range(len(listv)):
+                listv[i] = listv[i].__dict__ '''
+    return newobj
+
+def json_serial(obj):
+    """JSON serializer for objects not serializable by default json code"""
+
+    #print((obj,obj.__class__.__name__))
+    if obj.__class__.__name__=='date':
+        serial = str(obj)
+        return serial
+    if obj.__class__.__name__=='time':
+        serial = str(obj)
+        return serial
+    if isinstance(obj, int):
+        serial = str(obj)
+        return serial
+    if isinstance(obj, datetime):
+        serial = obj.isoformat()
+        return serial
+    if isinstance(obj, timedelta):
+        serial = str(obj)
+        return serial
+    #if isinstance(obj, list):
+    #    serial = json.dumps(obj,default=json_serial, sort_keys=True,indent=4, separators=(',', ': '))
+    #    return serial
+    if isinstance(obj, AircraftMovement):
+        serial = json.dumps(obj.__dict__,default=json_serial)
+        serial = eval(serial.replace('null','None').replace('true','True'))
+        return serial
+    if isinstance(obj, Flight):
+        serial = json.dumps(obj.__dict__,default=json_serial)
+        serial = eval(serial.replace('null','None').replace('true','True'))
+        return serial
+    raise TypeError ("Type not serializable")

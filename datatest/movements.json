@@ -3,6 +3,7 @@
         "Destination": "AEP", 
         "Origin": "BRC",
         "Aircraft": "BTH", 
+        "FlightNumber": "877", 
         "Time": "02:00:00", 
         "StartDateTime": "2016-10-01 10:00:00",
         "Type": 1
@@ -18,6 +19,7 @@
     {
         "Destination": "SLA", 
         "Origin": "AEP",
+        "FlightNumber": "871", 
         "Aircraft": "BTH", 
         "Time": "01:55:00", 
         "StartDateTime": "2016-10-01 15:10:00",
@@ -34,6 +36,7 @@
     {
         "Destination": "JUJ", 
         "Origin": "SLA",
+        "FlightNumber": "871", 
         "Aircraft": "BTH", 
         "Time": "00:20:00", 
         "StartDateTime": "2016-10-01 15:50:00",
@@ -50,6 +53,7 @@
     {
         "Destination": "AEP", 
         "Origin": "JUJ",
+        "FlightNumber": "873", 
         "Aircraft": "BTH", 
         "Time": "02:10:00", 
         "StartDateTime": "2016-10-01 17:01:00",
@@ -65,10 +69,19 @@
     },
     {
         "Destination": "BRC", 
-        "Origin": "AEP",
+        "Origin": "PMY",
+        "FlightNumber": "872", 
         "Aircraft": "BTH", 
         "Time": "02:01:00", 
         "StartDateTime": "2016-10-01 19:55:00",
         "Type": 1
+    },
+    {
+        "Destination": "BRC", 
+        "Origin": "BRC",
+        "Aircraft": "BTH", 
+        "Time": "02:01:00", 
+        "StartDateTime": "2016-10-01 22:55:00",
+        "Type": 2
     }
 ]

@@ -1,20 +1,19 @@
 import datetime
 import Tools
 
-def fieldsDefinition():
-    res = {}
-    res['Origin'] = ('str',3)
-    res['Destination'] = ('str',3)
-    res['FlightTime'] = ('time')
-    res['Distance'] = ('float')
-    res['BlockTime'] = ('time')
-    return res
-
 class Segment(object):
 
+    def fieldsDefinition(self.):
+        res = {}
+        res['Origin'] = ('str',3)
+        res['Destination'] = ('str',5)
+        res['FlightTime'] = ('time')
+        res['Distance'] = ('float')
+        res['BlockTime'] = ('time')
+        return res
 
     def __init__(self,fields):
-        if not Tools.validateFieldsType(fieldsDefinition(),fields): return
+        if not Tools.validateFieldsType(self.fieldsDefinition(),fields): return
         self.initOk = True
         self.Origin = fields.get('Origin',None)
         self.Destination = fields.get('Destination',None)

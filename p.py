@@ -1,11 +1,20 @@
-import time
-from datetime import datetime,timedelta
-import Tools
 
 if __name__ == "__main__":
 
-    t1 = datetime.strptime("2016-10-11", "%Y-%m-%d")
-    t2 = datetime.strptime("2016-10-12", "%Y-%m-%d")
-    print(t1)
-    print(t2)
-    print(t1>t2)
+    from urllib.request import Request, urlopen
+    from urllib.error import URLError, HTTPError
+    req = Request("http://www.google.com")
+    try:
+        response = urlopen(req)
+    except HTTPError as e:
+        # do something
+        print('Error code: ', e.code)
+    except URLError as e:
+        # do something
+        print('Reason: ', e.reason)
+    else:
+        # do something
+        f = open('google.html','w')
+        f.write(str(response.read()))
+        f.close()
+        #print(response.read())

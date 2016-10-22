@@ -1,34 +1,36 @@
 from datetime import datetime
 import Tools
 
-def fieldsDefinition():
-    res = {}
-    res['Origin'] = ('str',3)
-    res['Destination'] = ('str',3)
-    res['Aircraft'] = ('str',3)
-    res['Type'] = ('int')
-    res['Editable'] = ('int')
-    res['FlightNumber'] = ('str',3)
-    res['Id'] = ('int')
-    res['StartDateTime'] = ('datetime')
-    res['StartDate'] = ('date')
-    res['StartTime'] = ('time')
-    res['EndDateTime'] = ('datetime')
-    res['EndDate'] = ('date')
-    res['EndTime'] = ('time')
-    res['Time'] = ('time')
-    res['Days'] = ('int')
-    return res
-
 class AircraftMovement(object):
 
+    def fieldsDefinition(self):
+        res = {}
+        res['Origin'] = ('str',3)
+        res['Destination'] = ('str',5)
+        res['Aircraft'] = ('str',3)
+        res['FlightType'] = ('int')
+        res['Type'] = ('int')
+        res['Editable'] = ('int')
+        res['FlightNumber'] = ('str',3)
+        res['Id'] = ('int')
+        res['StartDateTime'] = ('datetime')
+        res['StartDate'] = ('date')
+        res['StartTime'] = ('time')
+        res['EndDateTime'] = ('datetime')
+        res['EndDate'] = ('date')
+        res['EndTime'] = ('time')
+        res['Time'] = ('time')
+        res['Days'] = ('int')
+        return res
+
     def __init__(self,fields):
-        if not Tools.validateFieldsType(fieldsDefinition(),fields): return
+        if not Tools.validateFieldsType(self.fieldsDefinition(),fields): return
         self.initOk = True
         self.Origin = fields.get('Origin',None)
         self.Destination = fields.get('Destination',None)
         self.Aircraft = fields.get('Aircraft',None)
         self.Type = int(fields.get('Type',0))
+        self.FlightType = int(fields.get('Type',0))
 
         self.Editable = int(fields.get('Editable',1))
         self.FlightNumber = fields.get('FlightNumber',None)
@@ -59,8 +61,12 @@ class AircraftMovement(object):
         if not self.EndTime and self.EndDateTime:
             self.EndTime = self.EndDateTime.time()
 
+
     def types(self):
         return {1:"Segmento",2:"Gap",3:"Mantenimiento"}
+
+    def flightTypes(self):
+        return {1:"Regular",2:"Charter",3:"Ferry",4:"Instruccion",5:"Inspeccion",6:"Prueba de Mantenimiento",7:"Vuelo Especial"}
 
     def check(self):
         if not self.checkType(): return False
