@@ -83,6 +83,20 @@ def addDays(myDate, days):
         pass
     return myDate
 
+def addHoursToDateTime(myDate, h):
+    try:
+        myDate += timedelta(hours=h)
+    except:
+        pass
+    return myDate
+
+def addMinutesToDateTime(myDate, m):
+    try:
+        myDate += timedelta(minutes=m)
+    except:
+        pass
+    return myDate
+
 def addTime(myTime1, myTime2):
     # a ver si puede ser mas elegante y generico
     d1 = timedelta(hours=myTime1.hour,minutes = myTime1.minute,seconds=myTime1.second)
@@ -97,7 +111,7 @@ def addTime(myTime1, myTime2):
 
 
 def importJson(filename):
-    with open('datatest/%s.json' % filename, 'r') as fp:
+    with open(filename, 'r') as fp:
         data = json.load(fp)
     return data
 

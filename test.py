@@ -10,9 +10,9 @@ if __name__ == "__main__":
     aircrattypes = Tools.getObjectClass(aircrattypes,'AircraftType')
     airports = Tools.importJson('airport')
     airports = Tools.getObjectClass(airports,'Airport') '''
-    movements = Tools.importJson('movements')
+    movements = Tools.importJson('datatest/movements.json')
     movements = Tools.getObjectClass(movements,'AircraftMovement')
-    lineprogram = Tools.importJson('lineprogram')
+    lineprogram = Tools.importJson('datatest/lineprogram.json')
     lineprogram = Tools.getObjectClass(lineprogram,'LineProgram')
     lp = lineprogram[0]
     for e in movements:

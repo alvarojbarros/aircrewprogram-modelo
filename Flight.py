@@ -11,7 +11,7 @@ class Flight(object):
         res['Aircraft'] = ('str',3)
         res['FlightType'] = ('int')
         res['Editable'] = ('int')
-        res['FlightNumber'] = ('str',3)
+        res['FlightNumber'] = ('str',10)
         res['Id'] = ('int')
         res['StartDateTime'] = ('datetime')
         res['StartDate'] = ('date')
@@ -22,6 +22,7 @@ class Flight(object):
         res['Time'] = ('time')
         res['Days'] = ('int')
         res['Segments'] = ([])
+        res['Aircrew'] = ([])
         return res
 
     def __init__(self,fields={}):
@@ -48,6 +49,7 @@ class Flight(object):
         self.EndTime = Tools.stringToTime(fields.get('EndTime',None))
 
         self.Segments = []
+        self.Aircrew = []
 
         self.getDateTimeFields()
 
@@ -77,25 +79,25 @@ class Flight(object):
 
     def addSegment(self,movement):
         if movement.__class__.__name__!='AircraftMovement':
-            Tools.errorLog('Error de Clase al Ingresar Movimiento %s %s ' % (self.StartDateTime.strftime('%Y%m%dT%H:%M:%S'),self.FlightNumber))
+            Tools.errorLog('1.Error de Clase al Ingresar Movimiento %s %s ' % (self.StartDateTime.strftime('%Y%m%dT%H:%M:%S'),self.FlightNumber))
             return False
         if self.Aircraft and movement.Aircraft!=self.Aircraft:
-            Tools.errorLog('Error al Ingresar Movimiento %s %s, No coincide Aeronave' % (self.StartDateTime.strftime('%Y%m%dT%H:%M:%S'),self.FlightNumber))
+            Tools.errorLog('2.Error al Ingresar Movimiento %s %s, No coincide Aeronave' % (self.StartDateTime.strftime('%Y%m%dT%H:%M:%S'),self.FlightNumber))
             return False
         elif not self.Aircraft:
             self.Aircraft = movement.Aircraft
         if self.FlightNumber and movement.FlightNumber!=self.FlightNumber:
-            Tools.errorLog('Error al Ingresar Movimiento %s %s, No coincide Nr de Vuelo' % (self.StartDateTime.strftime('%Y%m%dT%H:%M:%S'),self.FlightNumber))
+            Tools.errorLog('3.Error al Ingresar Movimiento %s %s, No coincide Nr de Vuelo' % (self.StartDateTime.strftime('%Y%m%dT%H:%M:%S'),self.FlightNumber))
             return False
         elif not self.FlightNumber:
             self.FlightNumber = movement.FlightNumber
         if self.FlightNumber and movement.FlightNumber!=self.FlightNumber:
-            Tools.errorLog('Error al Ingresar Movimiento %s %s, No coincide Nr de Vuelo' % (self.StartDateTime.strftime('%Y%m%dT%H:%M:%S'),self.FlightNumber))
+            Tools.errorLog('4.Error al Ingresar Movimiento %s %s, No coincide Nr de Vuelo' % (self.StartDateTime.strftime('%Y%m%dT%H:%M:%S'),self.FlightNumber))
             return False
         elif not self.FlightNumber:
             self.FlightNumber = movement.FlightNumber
         if self.FlightType and movement.FlightType!=self.FlightType:
-            Tools.errorLog('Error al Ingresar Movimiento %s %s, No coincide Nr de Vuelo' % (self.StartDateTime.strftime('%Y%m%dT%H:%M:%S'),self.FlightNumber))
+            Tools.errorLog('5.Error al Ingresar Movimiento %s %s, No coincide Nr de Vuelo' % (self.StartDateTime.strftime('%Y%m%dT%H:%M:%S'),self.FlightNumber))
             return False
         elif not self.FlightType:
             self.FlightType = movement.FlightType
@@ -118,3 +120,8 @@ class Flight(object):
         self.Days = tdelta.days
         self.Time = timedelta(tdelta.seconds)
         return True
+
+    def addAircrew(self,aircrew):
+        for p in aircrew:
+            if p not in self.Aircrew:
+                self.Aircrew.append(p)

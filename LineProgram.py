@@ -17,7 +17,7 @@ class LineProgram(object):
         res['Flights'] = ({})
         return res
 
-    def __init__(self,fields):
+    def __init__(self,fields={}):
         if not Tools.validateFieldsType(self.fieldsDefinition(),fields): return
         self.initOk = True
         self.IdStart = int(fields.get('IdStart',0))
@@ -63,8 +63,10 @@ class LineProgram(object):
         return True
 
     def checkElementsOrder(self,listv):
+        #nf = open("WGN.txt","w");
         l = len(listv)
         for i in range(1,l):
+            #nf.write("%s\t%s\t%s\t%s\t%s\n" %(listv[i].Origin,listv[i].StartDateTime,listv[i].FlightNumber,listv[i].EndDateTime,listv[i].Destination))
             if listv[i-1].StartDateTime >= listv[i].StartDateTime:
                 #control de todos los elementos en orden sin superposicion
                 Tools.errorLog('Error1 en Orden %s %s %s' % (listv[i].StartDateTime.strftime \
@@ -79,7 +81,7 @@ class LineProgram(object):
                 #control de secuencialidad, Origen = Destino
                 Tools.errorLog('Error en Origen/Destino %s %s %s %s %s %s' %  \
                     (listv[i-1].StartDateTime.strftime('%Y%m%dT%H:%M:%S') \
-                    ,listv[i].FlightNumber,listv[i].Aircraft \
+                    ,listv[i-1].FlightNumber,listv[i].Aircraft \
                     ,listv[i].StartDateTime.strftime('%Y%m%dT%H:%M:%S') \
                     ,listv[i].FlightNumber,listv[i].Aircraft))
                 Tools.errorLog('Destino: %s, Origen: %s' % (listv[i-1].Destination,listv[i].Origin))
@@ -88,6 +90,7 @@ class LineProgram(object):
             #    Tools.errorLog('Dos Vuelos Juntos %s %s %s' % (listv[i].StartDateTime.strftime \
             #        ('%Y%m%dT%H:%M:%S'),listv[i].FlightNumber,listv[i].Aircraft))
             #    return False
+        #nf.close()
         return True
 
     def check(self):
@@ -126,14 +129,12 @@ class LineProgram(object):
         key = "%s-%s" %(flight.StartDateTime.strftime('%Y%m%d'),flight.FlightNumber)
         self.Flights[key] = flight
         if AddSegment:
-            for segments in flight.Segments:
+            for segment in flight.Segments:
                 self.Elements.append(segment)
 
     def addElement(self,segment):
         self.Elements.append(segment)
         if segment.Type==1:
-            #key = (segment.StartDateTime,segment.FlightNumber)
-            #print(segment.StartDateTime,segment.Aircraft,segment.EndDateTime,segment.Origin,segment.Destination)
             key = "%s-%s" %(segment.StartDateTime.strftime('%Y%m%d'),segment.FlightNumber)
             if key in self.Flights:
                 flight = self.Flights[key]

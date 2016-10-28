@@ -1,1 +1,0 @@
-{'Destination': 'BRC', 'Id': 0, 'initOk': True, 'Editable': 1, 'StartDateTime': '2016-10-01T19:55:00', 'StartDate': '2016-10-01', 'Type': 1, 'EndDate': '2016-10-01', 'Origin': 'AEP', 'FlightType': 1, 'FlightNumber': None, 'StartTime': '19:55:00', 'EndTime': '21:56:00', 'Time': '02:01:00', 'Aircraft': 'BTH', 'EndDateTime': '2016-10-01T21:56:00', 'Days': 0}

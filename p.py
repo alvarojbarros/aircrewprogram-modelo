@@ -1,7 +1,11 @@
 
 if __name__ == "__main__":
 
-    from urllib.request import Request, urlopen
+    a = [1,2,3]
+    for e in a:
+        print(a.index(e))
+
+    ''' from urllib.request import Request, urlopen
     from urllib.error import URLError, HTTPError
     req = Request("http://www.google.com")
     try:
@@ -17,4 +21,4 @@ if __name__ == "__main__":
         f = open('google.html','w')
         f.write(str(response.read()))
         f.close()
-        #print(response.read())
+        #print(response.read()) '''

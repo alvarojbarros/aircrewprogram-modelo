@@ -1,0 +1,7 @@
+FromHours	ToHours	Landings
+0	2	4
+2	8	6
+8	11	5
+11	14	4
+14	9999	2
+

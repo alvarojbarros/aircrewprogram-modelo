@@ -11,7 +11,7 @@ class AircraftMovement(object):
         res['FlightType'] = ('int')
         res['Type'] = ('int')
         res['Editable'] = ('int')
-        res['FlightNumber'] = ('str',3)
+        res['FlightNumber'] = ('str',10)
         res['Id'] = ('int')
         res['StartDateTime'] = ('datetime')
         res['StartDate'] = ('date')
@@ -24,6 +24,27 @@ class AircraftMovement(object):
         return res
 
     def __init__(self,fields):
+
+        self.initOk = True
+
+        ''' self.Origin = fields[0]
+        self.Destination = fields[1]
+        self.Aircraft = fields[6]
+        self.Type = fields[5]
+        self.FlightType = 1
+
+        self.Editable = 1
+        self.FlightNumber = fields[4]
+        self.Id = 0
+        self.StartDateTime = Tools.stringToDateTime(fields[2])
+        self.StartDate = None
+        self.StartTime = None
+        self.Time = None
+        self.Days = None
+        self.EndDateTime = Tools.stringToDateTime(fields[3])
+        self.EndDate = None
+        self.EndTime = None '''
+
         if not Tools.validateFieldsType(self.fieldsDefinition(),fields): return
         self.initOk = True
         self.Origin = fields.get('Origin',None)
@@ -60,6 +81,7 @@ class AircraftMovement(object):
             self.EndDate = self.EndDateTime.date()
         if not self.EndTime and self.EndDateTime:
             self.EndTime = self.EndDateTime.time()
+
 
 
     def types(self):
