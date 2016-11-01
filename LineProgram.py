@@ -143,4 +143,7 @@ class LineProgram(object):
             flight.addSegment(segment)
             self.addFligth(flight,False)
 
+    def addPersonToFlight(self,person,flightNr):
+        if flightNr in self.Flights:
+            self.Flights[flightNr].addAircrew([person])
 

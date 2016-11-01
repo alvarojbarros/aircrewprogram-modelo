@@ -53,7 +53,9 @@ def stringToTime(string):
         return None
 
 def addTimeDaysToDatetime(days,myTime,myDatetime):
-    seconds = myTime.hour * 3600 + myTime.minute * 60 + myTime.second
+    seconds = 0
+    if myTime:
+        seconds = myTime.hour * 3600 + myTime.minute * 60 + myTime.second
     try:
         myDatetime += timedelta(days,seconds)
     except:
@@ -67,6 +69,29 @@ def addTimeToDatetime(myTime,myDatetime):
     except:
         pass
     return myDatetime
+
+def addMonthToDateTime(months,myDateTime):
+    newmonth = ((( myDateTime.month - 1) + months ) % 12 ) + 1
+    newyear  = myDateTime.year + ((( myDateTime.month - 1) + months ) / 12 )
+    newday = myDateTime.day
+    if newday>=28:
+        while newday >= 28:
+            try:
+                res = datetime( int(newyear), int(newmonth), newday)
+                return res
+            except:
+                newday += -1
+    else:
+        res = datetime( int(newyear), int(newmonth), newday)
+    return res
+
+def firstDayOfMonth(myDateTime):
+    return datetime(myDateTime.year,myDateTime.month,1)
+
+def lastDayOfMonth(myDateTime):
+    firstDate = datetime(myDateTime.year,myDateTime.month,1)
+    lastDate = addDaysToDatetime(-1,addMonthToDateTime(1,firstDate))
+    return lastDate
 
 def addDaysToDatetime(days,myDatetime):
     try:
@@ -241,3 +266,25 @@ def json_serial(obj):
         serial = eval(serial.replace('null','None').replace('true','True'))
         return serial
     raise TypeError ("Type not serializable")
+
+
+def importTable(filename):
+    f = open(filename, 'r')
+    k = 0
+    res = {}
+    for l in f:
+        fields = l.replace('\n','').split('\t')
+        if k==0:
+            dkeys = fields
+        else:
+            dic = {}
+            for i in range(1,len(fields)):
+                dic[dkeys[i]] = int(fields[i])
+            res[(int(fields[1]),int(fields[13]))] = dic
+        k += 1
+    return res
+
+def timeDiff(st,et):
+    t1 = datetime(1900,1,1,st.hour,st.minute,st.second)
+    t2 = datetime(1900,1,1,et.hour,et.minute,et.second)
+    return t2-t1

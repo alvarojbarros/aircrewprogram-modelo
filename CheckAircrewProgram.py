@@ -145,7 +145,21 @@ def getAirportsDic(airports):
 if __name__ == "__main__":
 
     ac = AircrewProgram()
-    FlightPrograms = importFlightProgram()
+    FlightPrograms = importFlightProgram('datatest/Octubre VS 2_3.csv')
+
+    Persons = importAircrewProgram()
+    airports = Tools.importJson('datatest/airport.json')
+    airports = Tools.getObjectClass(airports,'Airport')
+    airports = getAirportsDic(airports)
+    PersonPrograms = {}
+    for person in sorted(Persons):
+        pp = setPersonLineProgram(Persons[person],FlightPrograms,airports,False)
+        if pp:
+            for flightNr in pp.Flights:
+                for aircraft in FlightPrograms:
+                    FlightPrograms[aircraft].addPersonToFlight(person,flightNr)
+            PersonPrograms[person] = pp
+
     for aircraft in FlightPrograms:
         lp = FlightPrograms[aircraft]
         f = open('vuelos%s.txt' % aircraft,'w')
@@ -153,15 +167,11 @@ if __name__ == "__main__":
         f.write(jsonobj)
         f.close()
 
-    Persons = importAircrewProgram()
-    airports = Tools.importJson('datatest/airport.json')
-    airports = Tools.getObjectClass(airports,'Airport')
-    airports = getAirportsDic(airports)
-    for person in sorted(Persons):
-        print(person)
-        pp = setPersonLineProgram(Persons[person],FlightPrograms,airports,False)
-        if pp:
-            acp = AircrewProgram()
-            acp.checkLineProgram(None,person,pp)
-        break
+    for person in sorted(PersonPrograms):
+        pp = PersonPrograms[person]
+        acp = AircrewProgram()
+        acp.checkLineProgram(None,person,pp)
+
+
+        #break
     #ac.checkLineProgram(programs,"BARROS")

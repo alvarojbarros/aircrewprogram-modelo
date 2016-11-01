@@ -63,9 +63,7 @@ def processAircraft(fields,aircraft):
     return flights,gaps
 
 
-def getMovementDics(fecha,aircarfts,nnf,gmovs):
-    #nnf.write(str(fecha)+ "\n")
-    #nnf.write(str(aircarfts)+ "\n")
+def getMovementDics(fecha,aircarfts,gmovs):
     movs = []
     for key in sorted(aircarfts):
         d1 = datetime.datetime(fecha[0],fecha[1],fecha[2]).strftime("%Y-%m-%d")
@@ -75,7 +73,6 @@ def getMovementDics(fecha,aircarfts,nnf,gmovs):
         if not flights and not gaps:
             continue
         if flights:
-            #nnf.write(str(flights)+ "\n")
             for flight in flights:
                 if flight[3]<flight[1]:
                     d2 = Tools.addDays(datetime.datetime(fecha[0],fecha[1],fecha[2]),1).strftime("%Y-%m-%d")
@@ -87,30 +84,25 @@ def getMovementDics(fecha,aircarfts,nnf,gmovs):
                 ,"Type": 1 \
                 ,"Aircraft": key }
 
-                #nnf.write(str(dic)+ "\n")
                 movs.append(dic)
                 #gmovs.append(dic)
 
         ''' if gaps:
-            nnf.write(str(gaps)+ "\n")
             for gap in gaps:
                 if gap[2]<gap[0]:
                     d1 = Tools.addDays(datetime.datetime(fecha[0],fecha[1],fecha[2]),1).strftime("%Y-%m-%d")
                 dic = [gap[1],gap[1],"%s %s:00" % (d1,gap[0]),"%s %s:00" % (d2,gap[2]),'',2,key]
 
                 # dic = {"Origin":gap[1],"Destination":gap[1] \,"StartDateTime": "%s %s:00" % (d1,gap[0]) \,"EndDateTime": "%s %s:00" % (d2,gap[2]) \,"Type": 2 \,"Aircraft": key \}
-                #nnf.write(str(dic)+ "\n")
                 movs.append(dic)
                 gmovs.append(dic) '''
     #movs.sort()
     return movs
 
 
-def importFlightProgram():
+def importFlightProgram(filename):
 
-    f = open('datatest/Octubre VS 2_3.csv','r')
-
-    nnf = open('sementos.txt','w')
+    f = open(filename,'r')
 
     st = None
     et = None
@@ -141,9 +133,8 @@ def importFlightProgram():
                 #    continue
 
                 nf.write(str(lastdate) + '\n')
-                movs = getMovementDics(lastdate,aircarfts,nnf,gmovs)
+                movs = getMovementDics(lastdate,aircarfts,gmovs)
                 nf.write(str(movs) + '\n')
-                #nnf.write(str(movs)+ "\n")
                 for m in movs:
                     newmov = AircraftMovement(m)
                     newmovs.append(newmov)
@@ -158,16 +149,6 @@ def importFlightProgram():
                 aircarfts[fields[1]] = (flights,gaps)
                 if fields[1] not in airlist:
                     airlist.append(fields[1])
-    #newmovs.sort(key=lambda x: x.StartDateTime)
-    #for m in newmovs:
-    #    if m.FlightType==1:
-    #        nnf.write("%s\t%s\t%s\t%s\n" %(m.FlightNumber,m.Aircraft,m.StartDateTime,m.EndDateTime))
-
-    #gmovs.sort()
-    #for gmov in gmovs:
-    #    nnf.write(str(gmov)+ "\n")
-    #nnf.close()
-    #nf.close()
     LinePrograms = {}
     for airc in airlist:
         lp = LineProgram({"Aircraft":airc,"StatDateTime":st,"EndDateTime":et})
@@ -180,4 +161,4 @@ def importFlightProgram():
 
 if __name__ == "__main__":
 
-    importFlightProgram()
+    importFlightProgram('datatest/Octubre VS 2_3 - copia.csv')
