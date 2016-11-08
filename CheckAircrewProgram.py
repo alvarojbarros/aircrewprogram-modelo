@@ -36,7 +36,7 @@ def getSegmentByDestination(FlightPrograms,dest,day,origin=None):
 def setPersonLineProgram(Person,FlightPrograms,airports,printF=None):
     lp = LineProgram()
     for d in Person:
-        key = "201610%s" % str(d).rjust(2,"0")
+        key = "201611%s" % str(d).rjust(2,"0")
         date = datetime.strptime("%s-%s-%s" % (key[:4],key[4:6],key[6:]), "%Y-%m-%d").date()
         list = Person[d]
         k1 = 0
@@ -145,7 +145,7 @@ def getAirportsDic(airports):
 if __name__ == "__main__":
 
     ac = AircrewProgram()
-    FlightPrograms = importFlightProgram('datatest/Octubre VS 2_3.csv')
+    FlightPrograms = importFlightProgram('datatest/COMERCIAL NOVIEMBRE  VERSION TRES.csv')
 
     Persons = importAircrewProgram()
     airports = Tools.importJson('datatest/airport.json')
@@ -172,6 +172,10 @@ if __name__ == "__main__":
         acp = AircrewProgram()
         acp.checkLineProgram(None,person,pp)
 
+    #person = 'ARZUBI'
+    #pp = PersonPrograms[person]
+    #acp = AircrewProgram()
+    #acp.checkLineProgram(None,person,pp)
 
         #break
     #ac.checkLineProgram(programs,"BARROS")

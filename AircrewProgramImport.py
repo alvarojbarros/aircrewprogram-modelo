@@ -8,32 +8,39 @@ days = ['LUNES','MARTES','MIERCOLES','JUEVES','VIERNES','SABADO','DOMINGO']
 
 def importAircrewProgram():
 
-    f = open('datatest/tripulacion.Octubre 2_3.csv','r')
+    f = open('datatest/PROGRAMACION NOVIEMBRE NRO 3.csv','r')
     f1 = False
     persons = {}
     currentName = None
     k = 0
+    lmonth = None
     for l in f:
         fields = l.replace('\n','').split(';')
         if fields[1]=="COMANDANTES":
+            for k1 in range(1,len(fields)):
+                lmonth = k1 - 3
+                if not fields[k1]:
+                    break
             f1 = True
+            continue
+        if not lmonth:
             continue
         if f1:
             if fields[1]:
                 currentName = fields[1]
                 persons[currentName] = {}
                 k = 0
-                for i in range(1,32):
+                for i in range(1,lmonth):
                     persons[currentName][i] = []
 
         if currentName and k<4:
-            for i in range(1,32):
+            for i in range(1,lmonth):
                 if fields[i+2]:
                     persons[currentName][i].append(fields[i+2])
         k += 1
 
-        if fields[1]=="COPILOTOS":
-            break
+        #if fields[1]=="COPILOTOS":
+        #    break
     f.close()
     return persons
     print(persons['PASCUAL'])

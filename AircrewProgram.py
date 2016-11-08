@@ -155,6 +155,8 @@ def checkTimes(List,StartDateTime,EndDateTime,limit,CheckNight=False):
             #el segmento empieza termina en el periodo a controlar pero empieza antes
             td = segment.EndDateTime - StartDateTime
             t += td.seconds / 60
+
+
         if CheckNight:
             diff = None
             if segment.StartDateTime.time()>=NightTimeStart and segment.EndDateTime.time()>=NightTimeStart:
@@ -233,7 +235,8 @@ def checkNightTV(Segments):
     res = True
     for segment in Segments:
         if not checkSegment(Segments,segment,NightMaxTV[0]/24,NightMaxTV[1]):
-            appendError("No cumple TV Nocurno %s hs en dia %s" % (NightMaxTV[1],segment.StartDateTime.strftime("%d/%m/%Y")))
+            appendError("No cumple TV Nocturno %s hs en dia %s" % (NightMaxTV[1],segment.StartDateTime.strftime("%d/%m/%Y")))
+            return False
             res = False
     return res
 
@@ -385,12 +388,12 @@ class AircrewProgram(object):
                 tsv.appendSegment(s)
             k += 1
 
-        for tsv in TSVlist:
-            #flights = getFlightsListFromSegments(tsv.Segments)
-            #destlist = getDestinationListFromSegments(tsv.Segments)
-            #print(flights,destlist)
-            #print(tsv.StartDateTime,tsv.EndDateTime,tsv.Time)
-            pass
+        #for tsv in TSVlist:
+        #    flights = getFlightsListFromSegments(tsv.Segments)
+        #    destlist = getDestinationListFromSegments(tsv.Segments)
+        #    print(flights,destlist)
+        #    print(tsv.StartDateTime,tsv.EndDateTime,tsv.Time)
+        #    pass
 
         #Articulos 3, 4, 5, 6, 7 y 9
         res = True
@@ -398,11 +401,12 @@ class AircrewProgram(object):
             res = False
         if not checkTSV(TSVlist):
             res = False
-        if not checkNightTV(PersonSegments):
+        if not checkNightTV(NightSegments):
             res = False
         if not checkLandings(PersonSegments):
             res = False
 
+        #print (person,Errors)
         if not res:
             print(person,Errors)
             print("")

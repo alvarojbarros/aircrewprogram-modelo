@@ -4,7 +4,7 @@ from LineProgram import LineProgram
 import json
 import datetime
 
-months = {'SEPTIEMBRE':9,'OCTUBRE':10,'NOVIEMBRE':11}
+months = {'SEPTIEMBRE':9,'OCTUBRE':10,'NOVIEMBRE':11,'DICIEMBRE':12}
 days = ['LUNES','MARTES','MIERCOLES','JUEVES','VIERNES','SABADO','DOMINGO']
 
 def processAircraft(fields,aircraft):
