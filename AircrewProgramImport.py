@@ -16,6 +16,9 @@ def importAircrewProgram():
     lmonth = None
     for l in f:
         fields = l.replace('\n','').split(';')
+        if fields[1]=="REFERENCIAS":
+            break
+
         if fields[1]=="COMANDANTES":
             for k1 in range(1,len(fields)):
                 lmonth = k1 - 3
@@ -28,22 +31,23 @@ def importAircrewProgram():
         if f1:
             if fields[1]:
                 currentName = fields[1]
-                persons[currentName] = {}
-                k = 0
-                for i in range(1,lmonth):
-                    persons[currentName][i] = []
+                if currentName!="COPILOTOS":
+                    persons[currentName] = {}
+                    k = 0
+                    for i in range(1,lmonth+1):
+                        persons[currentName][i] = []
 
-        if currentName and k<4:
-            for i in range(1,lmonth):
-                if fields[i+2]:
-                    persons[currentName][i].append(fields[i+2])
+        if currentName!="COPILOTOS":
+            if currentName and k<4:
+                for i in range(1,lmonth+1):
+                    if fields[i+2]:
+                        persons[currentName][i].append(fields[i+2])
         k += 1
 
         #if fields[1]=="COPILOTOS":
         #    break
     f.close()
     return persons
-    print(persons['PASCUAL'])
 
 if __name__ == "__main__":
 

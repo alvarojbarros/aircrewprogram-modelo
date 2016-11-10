@@ -257,6 +257,12 @@ def json_serial(obj):
     #if isinstance(obj, list):
     #    serial = json.dumps(obj,default=json_serial, sort_keys=True,indent=4, separators=(',', ': '))
     #    return serial
+    if obj.__class__.__name__=='AircrewProgram':
+        serial = json.dumps(obj.__dict__,default=json_serial)
+        serial = eval(serial.replace('null','None').replace('true','True'))
+    if obj.__class__.__name__=='TSV':
+        serial = json.dumps(obj.__dict__,default=json_serial)
+        serial = eval(serial.replace('null','None').replace('true','True'))
     if isinstance(obj, AircraftMovement):
         serial = json.dumps(obj.__dict__,default=json_serial)
         serial = eval(serial.replace('null','None').replace('true','True'))
@@ -267,6 +273,22 @@ def json_serial(obj):
         return serial
     raise TypeError ("Type not serializable")
 
+
+def importRest(filename):
+    f = open(filename, 'r')
+    k = 0
+    res = []
+    for l in f:
+        fields = l.replace('\n','').split('\t')
+        if k==0:
+            dkeys = fields
+        else:
+            dic = {}
+            for i in range(0,len(fields)):
+                dic[dkeys[i]] = int(fields[i])
+            res.append(dic)
+        k += 1
+    return res
 
 def importTable(filename):
     f = open(filename, 'r')
@@ -288,3 +310,28 @@ def timeDiff(st,et):
     t1 = datetime(1900,1,1,st.hour,st.minute,st.second)
     t2 = datetime(1900,1,1,et.hour,et.minute,et.second)
     return t2-t1
+
+def objToString(obj):
+    if isinstance(obj, dict):
+        for key in obj:
+            obj[key] = objToString(obj[key])
+        return str(obj)
+    elif isinstance(obj, list):
+        for i in obj:
+            obj[i] = objToString(obj[i])
+        return str(obj)
+    elif obj.__class__.__name__ in ('TSV'):
+        return str(obj.__dict__)
+    else:
+        return str(obj)
+
+def objectToStringExport(fname,obj):
+    f = open(fname,'w')
+    #if isinstance(obj, dict):
+    #    jsonobj = json.dumps(obj,default=json_serial,indent=4, separators=(',', ': '))
+    #else:
+    #    jsonobj = json.dumps(obj.__dict__,default=json_serial,indent=4, separators=(',', ': '))
+    jsonobj = objToString(obj)
+    f.write(jsonobj)
+    f.close()
+

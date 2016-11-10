@@ -1,4 +1,4 @@
-from AircrewProgram import AircrewProgram
+from AircrewProgram import AircrewProgram,TRF
 from FlightProrgamImport import *
 from AircrewProgramImport import *
 from LineProgram import LineProgram
@@ -37,25 +37,23 @@ def setPersonLineProgram(Person,FlightPrograms,airports,printF=None):
     lp = LineProgram()
     for d in Person:
         key = "201611%s" % str(d).rjust(2,"0")
-        date = datetime.strptime("%s-%s-%s" % (key[:4],key[4:6],key[6:]), "%Y-%m-%d").date()
-        list = Person[d]
+        dvalue = datetime.strptime("%s-%s-%s" % (key[:4],key[4:6],key[6:]), "%Y-%m-%d")
+        date = dvalue.date()
+        list = Person[d] #lista de movimientos para esa persona ese dia
         k1 = 0
-        origin = None
         for n in list:
-            if k1==0 and isAirport(n,airports):
-                origin = n
-                k1 += 1
-                continue
-            #print("vuelo:",d,n,origin,k1,list)
-
+            found = False
+            origin = None
             flight = None
             nkey = None
             segment = None
+            if n in ('L','V','A','S','SP','G','MEDIA G','C','INMAE'):
+                lp.Others[date] = n
             if len(n)<3:
-                #print(d,key,n)
-                pass
-            if len(n)>3:
-                #print(n)
+                found = True
+                continue
+            if "/" in n:
+                #si los vuelos vienen cargados separados con /, los proceso cada uno individual
                 if "/" in n:
                     pars = n.split("/")
                     k = 0
@@ -64,21 +62,16 @@ def setPersonLineProgram(Person,FlightPrograms,airports,printF=None):
                         nkey = None
                         segment = None
                         skip = False
-                        if isAirport(nb,airports):
-                            #print(origin,nb)
-                            if k1>0:
-                                segment = getSegmentByDestination(FlightPrograms,nb,date,origin)
-                                if segment:
-                                    origin = segment.Destination
-                            else:
-                                skip = True
-                        elif len(nb)==3:
+                        if len(nb)==3:
+                            #intento generar el indicie con el numero de vuelo para buscar el vuelo en en el Programa de Vuelos
                             try:
                                 n1 = int(nb)
                                 nkey = key + "-" + nb
                             except:
                                 pass
                         elif len(nb)==1 and k>0 and len(pars[0])==3:
+                            #en este caso, los vuelos vienen de la siguiente forma 660/1
+                            #genero el indice componiendo el vuelo con el vuelo anterior reemplazando el ultimo digito
                             fnumber = pars[0]
                             try:
                                 n1 = int(fnumber)
@@ -86,38 +79,25 @@ def setPersonLineProgram(Person,FlightPrograms,airports,printF=None):
                             except:
                                 pass
                         if nkey:
+                            #busco el vuelo
                             flight = findFlightByNumber(FlightPrograms,nkey)
                         if flight:
+                            #agrego el vuelo al programa de vuelos de la persona
                             lp.addFligth(flight,True)
                             if printF:
                                 print(d,n,"%s-%s"%(flight.Origin,flight.Destination),flight.FlightNumber,"OK",list,k1,origin)
-                        elif segment:
-                            lp.addElement(segment)
-                            if printF:
-                                print(d,n,"%s-%s"%(segment.Origin,segment.Destination),segment.FlightNumber,"OK",list,k1,origin)
-                        elif not skip:
-                            if printF:
-                                print(d,nb,"No Encontrado",list,k1,origin)
-                            #print(d,n,list)
-                            pass
                         k += 1
-
-            elif len(n)==3:
-                try:
-                    n1 = int(n)
-                    nkey = key + "-" + n
-                except:
-                    if isAirport(n,airports):
-                        #if not flight:
-                        #    flight = getFlightByDestination(FlightPrograms,n,date)
-                        #print("buscando",n,date,origin)
-                        segment = getSegmentByDestination(FlightPrograms,n,date,origin)
-                        if segment:
-                            #print (origin,segment.Origin,segment.Destination)
-                            origin = segment.Destination
-                    else:
-                        if printF:
-                            print(2,n,"No es vuelo",list,k1,origin)
+            elif n[0]=="T":
+                vnr = n[1:]
+                nkey = key + "-" + vnr
+                flight = findFlightByNumber(FlightPrograms,nkey)
+                if flight:
+                    lp.Transfers.append(TRF(flight.StartDateTime,flight.EndDateTime,flight.Origin,flight.Destination))
+                elif isAirport(vnr,airports):
+                    lp.Transfers.append(TRF(dvalue,None,None,vnr))
+                found = True
+            else:
+                nkey = key + "-" + n
                 if nkey:
                     flight = findFlightByNumber(FlightPrograms,nkey)
                 if flight:
@@ -131,7 +111,6 @@ def setPersonLineProgram(Person,FlightPrograms,airports,printF=None):
                 else:
                     if printF:
                         print(d,n,"No Encontrado",list,k1,origin)
-                    pass
             k1 += 1
 
     return lp
@@ -153,12 +132,14 @@ if __name__ == "__main__":
     airports = getAirportsDic(airports)
     PersonPrograms = {}
     for person in sorted(Persons):
-        pp = setPersonLineProgram(Persons[person],FlightPrograms,airports,False)
-        if pp:
-            for flightNr in pp.Flights:
-                for aircraft in FlightPrograms:
-                    FlightPrograms[aircraft].addPersonToFlight(person,flightNr)
-            PersonPrograms[person] = pp
+        #if person=='WOLANOW':
+        if True:
+            pp = setPersonLineProgram(Persons[person],FlightPrograms,airports,False)
+            if pp:
+                for flightNr in pp.Flights:
+                    for aircraft in FlightPrograms:
+                        FlightPrograms[aircraft].addPersonToFlight(person,flightNr)
+                PersonPrograms[person] = pp
 
     for aircraft in FlightPrograms:
         lp = FlightPrograms[aircraft]
@@ -167,15 +148,15 @@ if __name__ == "__main__":
         f.write(jsonobj)
         f.close()
 
-    for person in sorted(PersonPrograms):
+    test = 0
+    if test == 0:
+        for person in sorted(PersonPrograms):
+            print(person)
+            pp = PersonPrograms[person]
+            acp = AircrewProgram()
+            acp.checkLineProgram(None,person,pp)
+    else:
+        person = 'GIOSA'
         pp = PersonPrograms[person]
         acp = AircrewProgram()
         acp.checkLineProgram(None,person,pp)
-
-    #person = 'ARZUBI'
-    #pp = PersonPrograms[person]
-    #acp = AircrewProgram()
-    #acp.checkLineProgram(None,person,pp)
-
-        #break
-    #ac.checkLineProgram(programs,"BARROS")

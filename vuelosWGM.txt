@@ -1,13 +1,18 @@
 {
+    "EndDateTime": null,
+    "Aircraft": "WGM",
+    "Transfers": [],
+    "initOk": true,
+    "EndDate": null,
+    "Flights": {},
+    "Rest": [],
+    "Others": {},
+    "IdStart": 0,
+    "Elements": [],
     "StartTime": null,
     "StartDate": null,
-    "Aircraft": "WGM",
-    "EndDateTime": null,
-    "EndTime": null,
-    "IdStart": 0,
+    "LocationDays": {},
+    "DaysFree": [],
     "StartDateTime": null,
-    "Flights": {},
-    "initOk": true,
-    "Elements": [],
-    "EndDate": null
+    "EndTime": null
 }

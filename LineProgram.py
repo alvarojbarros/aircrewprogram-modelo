@@ -15,6 +15,11 @@ class LineProgram(object):
         res['EndTime'] = ('time')
         res['Elements'] = ([])
         res['Flights'] = ({})
+        res['Transfers'] = ([])
+        res['Rest'] = ([])
+        res['Others'] = ({})
+        res['LocationDays'] = ({})
+        res['DaysFree'] = ([])
         return res
 
     def __init__(self,fields={}):
@@ -30,6 +35,12 @@ class LineProgram(object):
         self.EndTime = Tools.stringToTime(fields.get('EndTime',None))
         self.Elements = []
         self.Flights = {}
+        #los siguientes son atributos para el programa de una persona
+        self.Transfers = []
+        self.Others = {}
+        self.Rest = []
+        self.DaysFree = []
+        self.LocationDays = {}
 
         if self.StartDateTime and not self.StartDate:
             self.StartDate = self.StartDateTime.date()
@@ -63,10 +74,8 @@ class LineProgram(object):
         return True
 
     def checkElementsOrder(self,listv):
-        #nf = open("WGN.txt","w");
         l = len(listv)
         for i in range(1,l):
-            #nf.write("%s\t%s\t%s\t%s\t%s\n" %(listv[i].Origin,listv[i].StartDateTime,listv[i].FlightNumber,listv[i].EndDateTime,listv[i].Destination))
             if listv[i-1].StartDateTime >= listv[i].StartDateTime:
                 #control de todos los elementos en orden sin superposicion
                 Tools.errorLog('Error1 en Orden %s %s %s' % (listv[i].StartDateTime.strftime \
@@ -90,7 +99,6 @@ class LineProgram(object):
             #    Tools.errorLog('Dos Vuelos Juntos %s %s %s' % (listv[i].StartDateTime.strftime \
             #        ('%Y%m%dT%H:%M:%S'),listv[i].FlightNumber,listv[i].Aircraft))
             #    return False
-        #nf.close()
         return True
 
     def check(self):
