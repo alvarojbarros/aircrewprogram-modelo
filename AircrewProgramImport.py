@@ -6,15 +6,20 @@ import datetime
 
 days = ['LUNES','MARTES','MIERCOLES','JUEVES','VIERNES','SABADO','DOMINGO']
 
-def importAircrewProgram():
+def importAircrewProgram(f=None,filename=None):
 
-    f = open('datatest/PROGRAMACION NOVIEMBRE NRO 3.csv','r')
+    if not f:
+        if not filename:
+            return
+        f = open(filename,'r')
+
     f1 = False
     persons = {}
     currentName = None
     k = 0
     lmonth = None
-    for l in f:
+    lines = str(f.read()).split('\\r\\n')
+    for l in lines:
         fields = l.replace('\n','').split(';')
         if fields[1]=="REFERENCIAS":
             break

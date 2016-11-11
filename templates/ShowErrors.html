@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+    {% for person in sortDict(ErrorList) %}
+      <br> {{person}}
+      <ul>
+      {% set FlightsByDate = getFlightsByDate(ErrorList[person][1].Flights) %}
+      {% for d in  sortDict(FlightsByDate) %}
+        <li>{{ d }}: {{ getFlightsSorted(FlightsByDate[d]) }} </li>
+      {% endfor %}
+      </ul>
+
+      <ul>
+      {% for error in ErrorList[person][0] %}
+        <li><span style="color: red">{{ error }}</span></li>
+      {% endfor %}
+      </ul>
+
+
+    {% endfor %}
+
+</body>
+</html>

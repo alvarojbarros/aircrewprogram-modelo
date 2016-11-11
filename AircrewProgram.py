@@ -266,7 +266,7 @@ def checkLandings(Segments):
     for segment in Segments:
         if not checkSegmentLandings(Segments,segment,1,MaxLandings24Hs):
             appendError("No cumple Cantidad de Aterrizajes en 24 hs %s hs en dia %s" % segment.StartDateTime.strftime("%d/%m/%Y"))
-            return False
+            #return False
             res = False
     return res
 
@@ -283,15 +283,15 @@ def checkTV(Segments,TSVlist):
         if tsv and tsv.Segments:
             if not checkSegment(tsv.Segments,segment,1,tv24):
                 appendError("No cumple TV 24 hs en dia %s" % segment.StartDateTime.strftime("%d/%m/%Y"))
-                return False
+                #return False
                 res = False
         if not checkSegment(Segments,segment,2,tv48):
             appendError("No cumple TV 48 hs en dia %s" % segment.StartDateTime.strftime("%d/%m/%Y"))
-            return False
+            #return False
             res = False
         if not checkSegment(Segments,segment,7,tvWeek):
             appendError("No cumple TV 7 dias en dia %s" % segment.StartDateTime.strftime("%d/%m/%Y"))
-            return False
+            #return False
             res = False
 
     Month = TSV()
@@ -300,7 +300,7 @@ def checkTV(Segments,TSVlist):
         Month.EndDateTime = Tools.addMinutesToDateTime(Tools.addMonthToDateTime(1,Month.StartDateTime),-1)
         if not checkTimes(Segments,Month.StartDateTime,Month.EndDateTime,tvMonth,AddToNightSegment=True):
             appendError("No cumple TV 30 dias en dia %s" % segment.StartDateTime.strftime("%d/%m/%Y"))
-            return False
+            #return False
             res = False
 
         #Month.StartDateTime = Tools.addMonthToDateTime(-1,Tools.firstDayOfMonth(Segments[0].StartDateTime))
@@ -318,15 +318,15 @@ def checkTSV(TSVlist):
         #if not checkSegment(TSVlist,tsv,1,tsv24,True):
         if not checkSegment([tsv],tsv,1,tsv24,CheckNight=True):
             appendError("No cumple TSV 24 hs en dia %s" % tsv.StartDateTime.strftime("%d/%m/%Y"))
-            return False
+            #return False
             res = False
         if not checkSegment(TSVlist,tsv,2,tsv48):
             appendError("No cumple TSV 48 hs en dia %s" % tsv.StartDateTime.strftime("%d/%m/%Y"))
-            return False
+            #return False
             res = False
         if not checkSegment(TSVlist,tsv,7,tsvWeek):
             appendError("No cumple TSV 7 dias en dia %s" % tsv.StartDateTime.strftime("%d/%m/%Y"))
-            return False
+            #return False
             res = False
 
     Month = TSV()
@@ -335,7 +335,7 @@ def checkTSV(TSVlist):
         Month.EndDateTime = Tools.addMinutesToDateTime(Tools.addMonthToDateTime(1,Month.StartDateTime),-1)
         if not checkTimes(TSVlist,Month.StartDateTime,Month.EndDateTime,tvMonth):
             appendError("No cumple TV 30 dias en dia %s" % Month.StartDateTime.strftime("%d/%m/%Y"))
-            return False
+            #return False
             res = False
 
         #Month.StartDateTime = Tools.addMonthToDateTime(-1,Tools.firstDayOfMonth(TSVlist[0].StartDateTime))
@@ -349,43 +349,38 @@ def checkTSV(TSVlist):
 
 def checkDaysOutOfBase(PersonProgram,PersonFlights):
     Transfers = PersonProgram.Transfers
-    list = []
+    list1 = []
     for f in PersonFlights:
         #list.append((f.FlightNumber,f.StartDateTime,f.Origin,f.Destination))
-        list.append(f)
+        list1.append(f)
     for t in Transfers:
         #list.append((None,t.StartDateTime,t.Origin,t.Destination))
-        list.append(t)
+        list1.append(t)
     #list.sort(key=lambda x: x[1])
-    list.sort(key=lambda x: x.StartDateTime)
-    if not list:
+    list1.sort(key=lambda x: x.StartDateTime)
+    if not list1:
         return True
     #MontDates = Tools.lastDayOfMonth(list[0][1]).day
-    MontDates = Tools.lastDayOfMonth(list[0].StartDateTime).day
-    if not list:
+    MontDates = Tools.lastDayOfMonth(list1[0].StartDateTime).day
+    if not 1:
         return True
 
     days = {}
 
-    PersonProgram.LocationDays = days
-
-    if list[0].Origin in Bases:
-        for i in range(1,list[0].StartDateTime.day):
-            days[i] = list[0].Origin
-    for f in list:
+    if list1[0].Origin in Bases:
+        for i in range(1,list1[0].StartDateTime.day):
+            days[i] = list1[0].Origin
+    for f in list1:
         days[f.StartDateTime.day] = f.Destination
 
-    ''' if list[0][2] in Bases:
-        for i in range(1,list[0][1].day):
-            days[i] = list[0][2]
-    for f in list:
-        days[f[1].day] = f[3] '''
     for i in range(1,MontDates+1):
         if i in days:
             dest = days[i]
         else:
             days[i] = dest
     cnt = 0
+
+    PersonProgram.LocationDays = days
 
     for i in days:
         if days[i] not in Bases:
@@ -394,7 +389,7 @@ def checkDaysOutOfBase(PersonProgram,PersonFlights):
     MaxDaysOutBase = settings['MaxDaysOutBase']
     if cnt>MaxDaysOutBase:
         appendError("Mas de %i dias fuera de base: % i dias" % (MaxDaysOutBase,cnt))
-        return False
+        #return False
 
     return True
 
@@ -427,7 +422,7 @@ def checkRestTimes(TSVList,PersonProgram):
     for mov in MyList:
         if lastDest and mov[2].Origin!=lastDest and lastDest not in Bases:
             appendError("Secuencia de Vuelos Incorrecta")
-            return False
+            #return False
         lastDest = mov[2].Destination
 
     for d in sorted(PersonProgram.Others):
@@ -478,7 +473,7 @@ def checkRestTimes(TSVList,PersonProgram):
         TotalRestDays = settings['TotalRest30']
     if len(DaysFree) < TotalRestDays:
         appendError("No cumple Cantidad de dias Libres en el mes")
-        return False
+        #return False
 
     found = False
     c = 0
@@ -495,7 +490,7 @@ def checkRestTimes(TSVList,PersonProgram):
                 break
     if not found:
         appendError("No cumple %i de dias Libres seguidos en el mes" % ContinuedLocalRest)
-        return False
+        #return False
 
     RestDaysInBase = settings['RestDaysInBase']
     c = 0
@@ -504,7 +499,7 @@ def checkRestTimes(TSVList,PersonProgram):
             c += 1
     if c<RestDaysInBase:
         appendError("No Cumple %i Dias de Descanso en Base" % RestDaysInBase)
-        return False
+        #return False
 
     AddRestOutBase = settings['AddRestOutBase']
     Art25 = settings['Art25']
@@ -576,7 +571,7 @@ def checkRestTimes(TSVList,PersonProgram):
                 NextStart = nextTsv[0]
                 if NextStart<RestEnd:
                     appendError("No cumple Descanso despues de TS en dia %s" % RestStart.strftime("%d/%m/%Y"))
-                    return False
+                    #return False
                 RealRestEnd = NextStart
         else:
             firstDay = Tools.addDaysToDatetime(1,Tools.lastDayOfMonth(RealRestStart))
@@ -619,7 +614,7 @@ def checkRestTimes(TSVList,PersonProgram):
                     break
         if not found:
             appendError("No cumple Descanso de %i Horas entre %s y %s" % (WeekRestHours,d.strftime("%d/%m/%Y"),td.strftime("%d/%m/%Y")))
-            return False
+            #return False
         d = Tools.addDaysToDatetime(1,d)
     return True
 
@@ -671,6 +666,7 @@ class AircrewProgram(object):
         Bases = settings['Base']
 
 
+
         tdif = Tools.timeDiff(NightTimeEnd,NightTimeStart)
         NightRestLimit = (24 - tdif.seconds/3600) * NightRestLimit
 
@@ -695,6 +691,7 @@ class AircrewProgram(object):
                 if segment.Type==1:
                     PersonSegments.append(segment)
         PersonSegments.sort(key=lambda x: x.StartDateTime)
+
 
         #for s in PersonSegments:
         #    print (s.StartDateTime,s.FlightNumber,s.Origin,s.Destination)
@@ -726,6 +723,8 @@ class AircrewProgram(object):
 
         res = True
 
+
+
         #  Articulos 3, 4, 5, 6, 7 y 9
         if not checkTV(PersonSegments,TSVlist): res = False
         #  Articulos 3, 4, 5, 6, 7 y 9
@@ -739,10 +738,11 @@ class AircrewProgram(object):
         #  Articulos 21, 23 y 24 - Tiempos de Descanso mínimos despues de TSV
         if not checkRestTimes(TSVlist,PersonProgram): res = False
 
+        return Errors
+
         if not res:
             print(person,Errors)
             print("")
-
 
 ##################
 # Pendientes

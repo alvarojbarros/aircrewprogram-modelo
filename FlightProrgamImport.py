@@ -100,9 +100,12 @@ def getMovementDics(fecha,aircarfts,gmovs):
     return movs
 
 
-def importFlightProgram(filename):
+def importFlightProgram(f=None, filename=None):
 
-    f = open(filename,'r')
+    if not f:
+        if not filename:
+            return
+        f = open(filename,'r')
 
     st = None
     et = None
@@ -113,12 +116,12 @@ def importFlightProgram(filename):
     fecha = [2016,None,None]
     process = False
     lastdate = None
-    k = 0
-    nf = open('prueba.txt','w')
     gmovs = []
-    for l in f:
-        k += 1
+    lines = str(f.read()).split('\\r\\n')
+    for l in lines:
         fields = l.replace('\n','').split(';')
+        if len(fields)<2:
+            continue
         if fields[0]:
 
             if not fecha[2] and fields[0][0].isdigit():
@@ -129,12 +132,8 @@ def importFlightProgram(filename):
                 fecha = [2016,None,None]
 
             if fields[0] in days and lastdate:
-                #if fields[1]!='WGN':
-                #    continue
 
-                nf.write(str(lastdate) + '\n')
                 movs = getMovementDics(lastdate,aircarfts,gmovs)
-                nf.write(str(movs) + '\n')
                 for m in movs:
                     newmov = AircraftMovement(m)
                     newmovs.append(newmov)
@@ -142,10 +141,8 @@ def importFlightProgram(filename):
 
         if len(fields[1])==3:
             if all(word[0].isupper() for word in fields[1]):
-                #nf.write(str(fields[1]) + ";" + str(fields[2:]) + '\n')
 
                 flights,gaps = processAircraft(fields[2:],fields[1])
-                nf.write(str(flights) + ";" + str(gaps) + '\n')
                 aircarfts[fields[1]] = (flights,gaps)
                 if fields[1] not in airlist:
                     airlist.append(fields[1])
@@ -155,7 +152,6 @@ def importFlightProgram(filename):
         for e in newmovs:
             if e.Aircraft == airc:
                 lp.addElement(e)
-        #print (airc,lp.checkElements())
         LinePrograms[airc] = lp
     return LinePrograms
 

@@ -121,18 +121,23 @@ def getAirportsDic(airports):
         res[airport.Code] = airport
     return res
 
-if __name__ == "__main__":
+
+def test(VuelosFile,TripuFile):
 
     ac = AircrewProgram()
-    FlightPrograms = importFlightProgram('datatest/COMERCIAL NOVIEMBRE  VERSION TRES.csv')
+    #FlightPrograms = importFlightProgram('datatest/COMERCIAL NOVIEMBRE  VERSION TRES.csv')
+    FlightPrograms = importFlightProgram(VuelosFile)
+    print(FlightPrograms)
 
-    Persons = importAircrewProgram()
+    #Persons = importAircrewProgram('datatest/PROGRAMACION NOVIEMBRE NRO 3.csv')
+    Persons = importAircrewProgram(TripuFile)
+
     airports = Tools.importJson('datatest/airport.json')
     airports = Tools.getObjectClass(airports,'Airport')
     airports = getAirportsDic(airports)
     PersonPrograms = {}
     for person in sorted(Persons):
-        #if person=='WOLANOW':
+        #if person=='ANDRES':
         if True:
             pp = setPersonLineProgram(Persons[person],FlightPrograms,airports,False)
             if pp:
@@ -148,15 +153,26 @@ if __name__ == "__main__":
         f.write(jsonobj)
         f.close()
 
+
+    res = {}
+
     test = 0
     if test == 0:
         for person in sorted(PersonPrograms):
-            print(person)
+            print("Person: ", person)
             pp = PersonPrograms[person]
             acp = AircrewProgram()
-            acp.checkLineProgram(None,person,pp)
+            Errors = acp.checkLineProgram(None,person,pp)
+            res[person] = Errors,pp
     else:
-        person = 'GIOSA'
+        person = 'ANDRES'
         pp = PersonPrograms[person]
         acp = AircrewProgram()
-        acp.checkLineProgram(None,person,pp)
+        Errors = acp.checkLineProgram(None,person,pp)
+        res[person] = Errors,pp
+
+    return res
+
+if __name__ == "__main__":
+
+    test()
