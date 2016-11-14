@@ -154,7 +154,3 @@ def importFlightProgram(f=None, filename=None):
                 lp.addElement(e)
         LinePrograms[airc] = lp
     return LinePrograms
-
-if __name__ == "__main__":
-
-    importFlightProgram('datatest/Octubre VS 2_3 - copia.csv')

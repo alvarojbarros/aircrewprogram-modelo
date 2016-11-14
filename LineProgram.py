@@ -133,23 +133,40 @@ class LineProgram(object):
         self.sortFlights()
         self.sortElements()
 
-    def addFligth(self,flight,AddSegment):
-        key = "%s-%s" %(flight.StartDateTime.strftime('%Y%m%d'),flight.FlightNumber)
+    def getNewKeyNumber(self):
+        l = list(self.Flights)
+        if l:
+            return max(l) + 1
+        else:
+            return 1
+
+    def addFligth(self,flight,AddSegment,key=None):
+        if not key:
+            key = self.getNewKeyNumber()
+        #key = "%s-%s" %(flight.StartDateTime.strftime('%Y%m%d'),flight.FlightNumber)
         self.Flights[key] = flight
         if AddSegment:
             for segment in flight.Segments:
                 self.Elements.append(segment)
 
+    def findFlightByDateNumber(self,date,number):
+        for key in self.Flights:
+            flight = self.Flights[key]
+            if flight.StartDate==date and flight.FlightNumber==number:
+                return key
+
     def addElement(self,segment):
         self.Elements.append(segment)
         if segment.Type==1:
-            key = "%s-%s" %(segment.StartDateTime.strftime('%Y%m%d'),segment.FlightNumber)
-            if key in self.Flights:
+            #key = "%s-%s" %(segment.StartDateTime.strftime('%Y%m%d'),segment.FlightNumber)
+            key = self.findFlightByDateNumber(segment.StartDate,segment.FlightNumber)
+            if key:
                 flight = self.Flights[key]
             else:
+                key = self.getNewKeyNumber()
                 flight = Flight()
             flight.addSegment(segment)
-            self.addFligth(flight,False)
+            self.addFligth(flight,False,key)
 
     def addPersonToFlight(self,person,flightNr):
         if flightNr in self.Flights:

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+    <table border="1">
+    {% for date in getDaysList(Vuelos) %}
+      <tr>
+      <td rowspan="5"> {{date}} </td>
+      {% for aircraft in sortDict(Vuelos) %}
+        <tr>
+
+        <td> {{aircraft}} </td>
+
+        {% set VuelosAircraft = getVuelosAircraft(Vuelos[aircraft].Flights,date) %}
+        {% for flight in VuelosAircraft %}
+
+          <td align="center"> {{flight.Origin}} {{flight.StartTime}} {{flight.FlightNumber}} {{flight.EndTime}} {{flight.Destination}} </td>
+
+        {% endfor %}
+
+        </tr>
+      {% endfor %}
+      </tr>
+
+
+    {% endfor %}
+    </table>
+
+</body>
+</html>

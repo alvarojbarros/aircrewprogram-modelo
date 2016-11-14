@@ -13,6 +13,14 @@ def findFlightByNumber(FlightPrograms,FlightNumber):
         if FlightNumber in program.Flights:
             return program.Flights[FlightNumber]
 
+def findFlightByDateNumber(FlightPrograms,Date,FlightNumber):
+    for aircraft in FlightPrograms:
+        program = FlightPrograms[aircraft]
+        for key in program.Flights:
+            Flight = program.Flights[key]
+            if Flight.StartDate==Date and Flight.FlightNumber==FlightNumber:
+                return program.Flights[key]
+
 def isAirport(code,airports):
     if code in airports:
         return True
@@ -80,7 +88,8 @@ def setPersonLineProgram(Person,FlightPrograms,airports,printF=None):
                                 pass
                         if nkey:
                             #busco el vuelo
-                            flight = findFlightByNumber(FlightPrograms,nkey)
+                            #flight = findFlightByNumber(FlightPrograms,nkey)
+                            flight = findFlightByDateNumber(FlightPrograms,date,nkey.split('-')[1])
                         if flight:
                             #agrego el vuelo al programa de vuelos de la persona
                             lp.addFligth(flight,True)
@@ -90,7 +99,8 @@ def setPersonLineProgram(Person,FlightPrograms,airports,printF=None):
             elif n[0]=="T":
                 vnr = n[1:]
                 nkey = key + "-" + vnr
-                flight = findFlightByNumber(FlightPrograms,nkey)
+                #flight = findFlightByNumber(FlightPrograms,nkey)
+                flight = findFlightByDateNumber(FlightPrograms,date,nkey.split('-')[1])
                 if flight:
                     lp.Transfers.append(TRF(flight.StartDateTime,flight.EndDateTime,flight.Origin,flight.Destination))
                 elif isAirport(vnr,airports):
@@ -99,7 +109,8 @@ def setPersonLineProgram(Person,FlightPrograms,airports,printF=None):
             else:
                 nkey = key + "-" + n
                 if nkey:
-                    flight = findFlightByNumber(FlightPrograms,nkey)
+                    #flight = findFlightByNumber(FlightPrograms,nkey)
+                    flight = findFlightByDateNumber(FlightPrograms,date,nkey.split('-')[1])
                 if flight:
                     lp.addFligth(flight,True)
                     if printF:
@@ -122,20 +133,19 @@ def getAirportsDic(airports):
     return res
 
 
-def test(VuelosFile,TripuFile):
+def process(VuelosFile,TripuFile):
 
     ac = AircrewProgram()
-    #FlightPrograms = importFlightProgram('datatest/COMERCIAL NOVIEMBRE  VERSION TRES.csv')
     FlightPrograms = importFlightProgram(VuelosFile)
-    print(FlightPrograms)
+    #return FlightPrograms
 
-    #Persons = importAircrewProgram('datatest/PROGRAMACION NOVIEMBRE NRO 3.csv')
     Persons = importAircrewProgram(TripuFile)
 
     airports = Tools.importJson('datatest/airport.json')
     airports = Tools.getObjectClass(airports,'Airport')
     airports = getAirportsDic(airports)
     PersonPrograms = {}
+
     for person in sorted(Persons):
         #if person=='ANDRES':
         if True:
